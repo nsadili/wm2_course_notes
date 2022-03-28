@@ -5,8 +5,10 @@
 		<servlet-name>MainServlet</servlet-name>
 		<servlet-class>ada.wm2.MainServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>MainServlet</servlet-name>
 		<url-pattern>/main</url-pattern>
 	</servlet-mapping>
+
 </web-app>
