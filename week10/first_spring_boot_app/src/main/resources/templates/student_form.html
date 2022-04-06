@@ -1,0 +1,22 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+
+<p>Please provide student info</p>
+
+<form action="#" th:action="@{/student/save}" th:object="${student}" method="POST">
+    <input type="hidden" th:field="*{id}"> <br/>
+    First Name: <input type="text" th:field="*{firstName}"><br/>
+    Last Name: <input type="text" th:field="*{lastName}"><br/>
+    School Name: <input type="text" th:field="*{schoolName}"><br/>
+    <input type="submit" value="Save"/>
+</form>
+
+</body>
+</html>

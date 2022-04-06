@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+
+<p>Courses offered by <span th:text="${school}"></span></p>
+
+<table>
+    <thead>
+    <tr>
+        <th> Course ID</th>
+        <th> Course Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${courses.empty}">
+        <td> No data found….</td>
+    </tr>
+    <tr th:each="course : ${courses}">
+        <td><span th:text="${course.id}"> ID </span></td>
+        <td><span th:text="${course.courseName}"> Name </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

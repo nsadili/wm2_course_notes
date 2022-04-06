@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="greetingText" class="java.lang.String">
+        <constructor-arg value="A message from application context!"/>
+    </bean>
+
+    <bean id="defaultStudent" class="az.edu.ada.wm2.first_spring_boot_app.bean.StudentBean">
+        <!--        <property name="firstName" value="Nuraddin"></property>-->
+        <!--        <property name="lastName" value="Sadili"></property>-->
+        <constructor-arg value="Nuraddin" index="0"/>
+        <constructor-arg value="Sadili" index="1"/>
+    </bean>
+</beans>

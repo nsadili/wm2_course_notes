@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<a th:href="@{/student/newForm}"> Create new student </a>
-<br/>
 <table>
     <thead>
     <tr>
@@ -17,18 +15,14 @@
         <th> Lastname</th>
         <th> School</th>
         <th> Courses</th>
-        <th> View</th>
-        <th> Edit</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr th:if="${students.empty}">
-        <td> No data found….</td>
-    </tr>
-    <tr th:each="student : ${students}">
-        <td><span th:text="${student.firstName}"> Name </span></td>
-        <td><span th:text="${student.lastName}"> Surname </span></td>
-        <td><span th:text="${student.schoolName}"> School </span></td>
+    <tr>
+        <td th:text="${student.firstName}"> Name</td>
+        <td th:text="${student.lastName}"> Surname</td>
+        <td th:text="${student.schoolName}"> School</td>
         <td>
             <select>
                 <option th:each="course : ${student.courses}"
@@ -36,8 +30,7 @@
                         th:value="${course.id}"></option>
             </select>
         </td>
-        <td><a th:href="@{/student/{id}(id=${student.id})}"> View </a></td>
-        <td><a th:href="@{/student/edit/{id}(id=${student.id})}"> Edit </a></td>
+        <td><a th:href="@{/student/list}"> Back to list </a></td>
     </tr>
     </tbody>
 </table>
