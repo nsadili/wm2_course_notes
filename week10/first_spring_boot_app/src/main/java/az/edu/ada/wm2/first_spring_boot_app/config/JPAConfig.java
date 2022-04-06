@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+@Configuration
 public class JPAConfig {
 
-    public DataSource getDataSource() {
+    @Bean
+    public DataSource getDataSource1() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.h2.Driver");
         dataSourceBuilder.url("jdbc:h2:mem:umsDB");
@@ -17,5 +19,15 @@ public class JPAConfig {
         return dataSourceBuilder.build();
     }
 
+
+//    @Bean(name = "testDB")
+//    public DataSource getDataSource2() {
+//        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+//        dataSourceBuilder.driverClassName("org.h2.Driver");
+//        dataSourceBuilder.url("jdbc:h2:mem:test_umsDB");
+////        dataSourceBuilder.username("root");//se
+////        dataSourceBuilder.password("pass");//
+//        return dataSourceBuilder.build();
+//    }
 
 }

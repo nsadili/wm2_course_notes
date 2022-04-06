@@ -1,4 +1,3 @@
-
 INSERT INTO STUDENT(first_name, last_name) VALUES('Sabrina-Maria', 'Sakka')
 INSERT INTO STUDENT(first_name, last_name) VALUES('Ilaha', 'Behbudova')
 INSERT INTO STUDENT(first_name, last_name) VALUES('Nuraddin', 'Sadili')
