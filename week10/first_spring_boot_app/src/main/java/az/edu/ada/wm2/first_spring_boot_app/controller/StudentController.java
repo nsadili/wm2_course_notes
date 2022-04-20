@@ -6,11 +6,13 @@ import az.edu.ada.wm2.first_spring_boot_app.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +37,14 @@ public class StudentController {
     }
 
     @PostMapping("/save")
-    public String saveStudent(Model model, Student student) {
-        Student updadedStudent = studentService.save(student);
-        model.addAttribute("student", updadedStudent);
+    public String saveStudent(Model model, @Valid Student student, BindingResult bindingResult) {
+
+        if(bindingResult.hasErrors()){
+            return "student_form";
+        }
+
+        Student updatedStudent = studentService.save(student);
+        model.addAttribute("student", updatedStudent);
         return "student_info";
     }
 
@@ -52,9 +59,12 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public String getStudent(Model model, @PathVariable Integer id) {
-        model.addAttribute("student", studentService.getById(id));
+    public String getStudent(Model model, @PathVariable Integer id) throws Exception {
+        if (!studentService.exists(id)) {
+            throw new Exception("Student is not found");
+        }
 
+        model.addAttribute("student", studentService.getById(id));
         return "student_info";
     }
 

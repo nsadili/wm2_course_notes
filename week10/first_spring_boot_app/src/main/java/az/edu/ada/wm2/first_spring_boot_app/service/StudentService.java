@@ -27,6 +27,12 @@ public class StudentService {
         return new Student("No Student", "Found");
     }
 
+    public boolean exists(Integer id){
+        Optional<Student> stud = studentRepository.findById(id);
+
+        return stud.isPresent();
+    }
+
     public Student getStudentByNamesAnd(String firstName, String lastName) {
         Optional<Student> stud = studentRepository.findByFirstNameAndLastName(firstName, lastName);
 

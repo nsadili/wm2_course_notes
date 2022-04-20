@@ -1,6 +1,9 @@
 package az.edu.ada.wm2.first_spring_boot_app.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
@@ -11,10 +14,13 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotBlank(message = "FirstName cannot be blank. Use another firstName")
     private String firstName;
 
+    @NotEmpty
     private String lastName;
 
+    @Size(max = 5)
     @Column(name = "school")
     private String schoolName;
 
