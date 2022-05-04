@@ -3,9 +3,9 @@ package az.edu.az.wm2.mongo_db_demo.mapper;
 import az.edu.az.wm2.mongo_db_demo.dto.StudentSummaryDto;
 import az.edu.az.wm2.mongo_db_demo.entity.Student;
 
-public class StudentMapperImpl implements StudentMapper {
+public class StudentMapperImplementation /*implements StudentMapper */ {
 
-    @Override
+//    @Override
     public StudentSummaryDto studentToStudentSummeryDto(Student std) {
 
         if (std == null) return null;

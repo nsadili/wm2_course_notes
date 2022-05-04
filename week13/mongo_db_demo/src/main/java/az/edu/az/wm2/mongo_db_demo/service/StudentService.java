@@ -1,6 +1,9 @@
 package az.edu.az.wm2.mongo_db_demo.service;
 
+import az.edu.az.wm2.mongo_db_demo.dto.StudentDto;
+import az.edu.az.wm2.mongo_db_demo.dto.StudentSummaryDto;
 import az.edu.az.wm2.mongo_db_demo.entity.Student;
+import az.edu.az.wm2.mongo_db_demo.mapper.StudentMapper;
 import az.edu.az.wm2.mongo_db_demo.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +20,8 @@ public class StudentService {
     @Autowired
     StudentSequenceGenerator sequenceGenerator;
 
-    public List<Student> getAllStudents() {
-        return stdRepo.findAll();
+    public List<StudentSummaryDto> getAllStudents() {
+        return StudentMapper.MAPPER.studentListToStudentSummeryDtoList(stdRepo.findAll());
     }
 
 
@@ -26,17 +29,21 @@ public class StudentService {
         return stdRepo.findAllWithGradeBetween(min, max);
     }
 
-    public Student getStudentById(Integer id) {
+    public StudentSummaryDto getStudentById(Integer id) {
         Optional<Student> stdOpt = stdRepo.findById(id);
         if (stdOpt.isPresent()) {
-            return stdOpt.get();
+            Student std = stdOpt.get();
+            return StudentMapper.MAPPER.studentToStudentSummeryDto(std);
         }
-        return new Student();
+        return new StudentSummaryDto();
     }
 
-    public Student save(Student student) {
-        student.setId(sequenceGenerator.generateSequence(Student.SEQUENCE_NAME));
-        return stdRepo.save(student);
+    public StudentDto save(StudentDto studentDto) {
+        studentDto.setId(sequenceGenerator.generateSequence(Student.SEQUENCE_NAME));
+        Student stud = StudentMapper.MAPPER.studentDtoToStudent(studentDto);
+
+        Student savedStd = stdRepo.save(stud);
+        return StudentMapper.MAPPER.studentToStudentDto(savedStd);
     }
 
 }

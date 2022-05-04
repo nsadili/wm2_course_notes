@@ -12,4 +12,5 @@ public interface StudentRepository extends MongoRepository<Student, Integer> {
     @Query("{ 'grade' : { $gt: ?0, $lt: ?1 } }")
     List<Student> findAllWithGradeBetween(Double min, Double max);
 
+
 }

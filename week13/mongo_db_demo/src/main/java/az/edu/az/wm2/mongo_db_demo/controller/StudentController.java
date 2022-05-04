@@ -1,5 +1,7 @@
 package az.edu.az.wm2.mongo_db_demo.controller;
 
+import az.edu.az.wm2.mongo_db_demo.dto.StudentDto;
+import az.edu.az.wm2.mongo_db_demo.dto.StudentSummaryDto;
 import az.edu.az.wm2.mongo_db_demo.entity.Student;
 import az.edu.az.wm2.mongo_db_demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class StudentController {
     private StudentService stdService;
 
     @GetMapping("/")
-    public List<Student> getAllStudents() {
+    public List<StudentSummaryDto> getAllStudents() {
         return stdService.getAllStudents();
     }
 
@@ -29,13 +31,12 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable Integer id) {
+    public ResponseEntity<StudentSummaryDto> getStudentById(@PathVariable Integer id) {
         return ResponseEntity.ok(stdService.getStudentById(id));
     }
 
     @PostMapping("/")
-    public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
-        return new ResponseEntity<>(stdService.save(student), HttpStatus.CREATED);
-
+    public ResponseEntity<StudentDto> saveStudent(@RequestBody StudentDto studentDto) {
+        return new ResponseEntity<>(stdService.save(studentDto), HttpStatus.CREATED);
     }
 }
