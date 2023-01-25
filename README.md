@@ -1,3 +1,3 @@
 # wm2_course_notes
 
-Update main branch.
+<strong>Update main branch.</strong>
