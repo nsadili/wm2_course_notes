@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/students/list}">List courses</a>
+        <a th:href="@{/students/create}">Create courses</a>
+    </nav>
+</header>
+<main>
+    <form method="POST" th:action="@{/students/{id}/update(id=${student.id})}" th:object="${student}">
+        <input id="id" type="hidden" th:field="*{id}">
+        <div>
+            <label for="first-name">First Name</label>
+            <input id="first-name" type="text" th:field="*{firstName}">
+        </div>
+        <div>
+            <label for="last-name">Last Name</label>
+            <input id="last-name" type="text" th:field="*{lastName}">
+        </div>
+        <div>
+            <label for="major">Major</label>
+            <input id="major" type="text" th:field="*{major}">
+        </div>
+        <div>
+            <label for="application-year">Application Year</label>
+            <input id="application-year" type="number" th:field="*{applicationYear}">
+        </div>
+        <input type="submit" value="Update">
+    </form>
+</main>
+
+</body>
+</html>

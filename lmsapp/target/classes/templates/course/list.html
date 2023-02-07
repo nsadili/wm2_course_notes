@@ -1,0 +1,44 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title>List of courses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a th:href="@{/courses/list}">List Course</a>
+        <a th:href="@{/courses/create}">Create Course</a>
+    </nav>
+</header>
+<main>
+
+    <table border="1px">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Department name</th>
+            <th>Credits</th>
+            <th></th>
+        </tr>
+        <tr th:each="course : ${courses}">
+            <td th:text="${course.id}">Id</td>
+            <td th:text="${course.name}">Name</td>
+            <td th:text="${course.departmentName}">Description</td>
+            <td th:text="${course.credits}">Credits</td>
+            <td>
+                <a th:href="@{/courses/{id}(id=${course.id})}">View</a>
+                <a th:href="@{/courses/{id}/update(id=${course.id})}">Update</a>
+                <a th:href="@{/courses/{id}/delete(id=${course.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</main>
+
+</body>
+
+</html>

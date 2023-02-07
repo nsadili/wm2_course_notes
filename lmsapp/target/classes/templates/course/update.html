@@ -1,0 +1,37 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update course</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/courses/list}">List courses</a>
+        <a th:href="@{/courses/create}">Create courses</a>
+    </nav>
+</header>
+<main>
+    <form method="POST" th:action="@{/courses/{id}/update(id=${course.id})}" th:object="${course}">
+        <input id="id" type="hidden" th:field="*{id}">
+        <div>
+            <label for="title">Name</label>
+            <input id="title" type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label for="department-name">Department name</label>
+            <input id="department-name" type="text" th:field="*{departmentName}">
+        </div>
+        <div>
+            <label for="year">Credits</label>
+            <input id="year" type="number" th:field="*{credits}">
+        </div>
+        <input type="submit" value="Update">
+    </form>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete student</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/students/list}">List students</a>
+        <a th:href="@{/students/create}">Create student</a>
+    </nav>
+</header>
+<main>
+    <h1 th:text="|Are you sure you want to delete ${student.firstName} ${student.lastName} ?|"></h1>
+    <form method="POST" th:action="@{/students/{id}/delete(id=${student.id})}">
+        <a th:href="@{/students/list}">Go back</a>
+        <input type="submit" value="Delete">
+    </form>
+</main>
+
+</body>
+</html>

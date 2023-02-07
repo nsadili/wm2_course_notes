@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create course</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/courses/list}">List courses</a>
+        <a th:href="@{/courses/create}">Create courses</a>
+    </nav>
+</header>
+<main>
+    <form method="POST" th:action="@{/courses/create}" th:object="${course}">
+        <div>
+            <label for="course-name">Name</label>
+            <input id="course-name" type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label for="department-name">Department name</label>
+            <input id="department-name" type="text" th:field="*{departmentName}">
+        </div>
+        <div>
+            <label for="credits">Credits</label>
+            <input id="credits" type="number" th:field="*{credits}">
+        </div>
+        <input type="submit" value="Create">
+    </form>
+</main>
+
+</body>
+</html>

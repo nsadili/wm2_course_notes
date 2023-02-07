@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title th:text="${student.firstName + ' ' + student.lastName}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a th:href="@{/students/list}">List students</a>
+            <a th:href="@{/students/create}">Create student</a>
+        </nav>
+    </header>
+    <main>
+        <h1 th:text="${student.firstName + ' ' + student.lastName}"></h1>
+        <h3 th:text="${student.major}"></h3>
+        <h6 th:text="${student.applicationYear}"></h6>
+
+
+        <table border="1px">
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Major</th>
+                <th>Application Year</th>
+                <th></th>
+            </tr>
+            <tr th:each="course : ${student.courses}">
+                <td th:text="${course.id}">Id</td>
+                <td th:text="${course.name}">Name</td>
+                <td th:text="${course.departmentName}">Description</td>
+                <td th:text="${course.credits}">Credits</td>
+                <td><a th:href="@{/courses/{id}(id=${course.id})}">View</a></td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>
