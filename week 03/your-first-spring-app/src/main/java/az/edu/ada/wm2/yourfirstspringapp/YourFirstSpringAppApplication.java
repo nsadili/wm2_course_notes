@@ -2,6 +2,7 @@ package az.edu.ada.wm2.yourfirstspringapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+<<<<<<< HEAD
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,3 +25,22 @@ public class YourFirstSpringAppApplication {
     }
 
 }
+=======
+
+@SpringBootApplication
+
+public class YourFirstSpringAppApplication {
+
+	public static void main(String[] args) {
+
+		SpringApplication.run(YourFirstSpringAppApplication.class, args);
+
+		System.out.println("Printing your HELLO WORLD!");
+
+	}
+
+
+}
+
+
+>>>>>>> 8b9d2a7 (creating first spring boot app)
