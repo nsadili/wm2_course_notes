@@ -8,6 +8,7 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+<<<<<<< HEAD
 
 	<groupId>az.edu.ada.wm2</groupId>
 	<artifactId>your-first-spring-app</artifactId>
@@ -18,6 +19,16 @@
 		<java.version>19</java.version>
 	</properties>
 
+=======
+	<groupId>az.edu.ada.wm2</groupId>
+	<artifactId>your-first-spring-app</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>yourFirstSpringApp</name>
+	<description>Demo project for Spring Boot in the scope of ADA</description>
+	<properties>
+		<java.version>19</java.version>
+	</properties>
+>>>>>>> 8b9d2a7 (creating first spring boot app)
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -30,6 +41,10 @@
 			<scope>test</scope>
 		</dependency>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8b9d2a7 (creating first spring boot app)
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
