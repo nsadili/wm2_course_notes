@@ -1,3 +1,4 @@
 # wm2_course_notes
 
-<strong>Hi 👋</strong>
+<<<<<<< HEAD
+<strong>DO NOT Update main branch.</strong>
