@@ -1,23 +1,24 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>New Person</title>
 </head>
+
 <body>
-<form method="POST" th:action="@{/people/save}" th:object="${person}">
-    <div>
-        <label for="first-name">First Name</label>
-        <input id="first-name" type="text" th:field="*{firstName}" placeholder="First Name">
-    </div>
-    <div>
-        <label for="last-name">First Name</label>
-        <input id="last-name" type="text" th:field="*{lastName}" placeholder="Last Name">
-    </div>
-    <input type="submit" value="Send">
-</form>
+    <form method="POST" th:action="@{/people/save}" th:object="${person}">
+        <div>
+            <label for="first-name">First Name</label>
+            <input id="first-name" type="text" th:field="*{firstName}" placeholder="First Name">
+        </div>
+        <div>
+            <label for="last-name">First Name</label>
+            <input id="last-name" type="text" th:field="*{lastName}" placeholder="Last Name">
+        </div>
+        <input type="submit" value="Send">
+    </form>
 </body>
+
 </html>
