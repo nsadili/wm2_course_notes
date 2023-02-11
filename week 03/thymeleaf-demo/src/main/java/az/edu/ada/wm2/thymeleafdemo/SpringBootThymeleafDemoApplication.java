@@ -5,11 +5,9 @@ import az.edu.ada.wm2.thymeleafdemo.service.PersonService;
 import az.edu.ada.wm2.thymeleafdemo.service.PersonServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-//@ComponentScan("az.edu.ada.wm2")
 public class SpringBootThymeleafDemoApplication {
 
     public static void main(String[] args) {
