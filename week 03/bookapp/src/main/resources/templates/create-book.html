@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create book</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/books}">List Books</a>
+        <a th:href="@{/create}">Create Book</a>
+    </nav>
+</header>
+<main>
+
+<form method="POST" th:action="@{/create}" th:object="${book}">
+    <div>
+        <label for="title">Title</label>
+        <input id="title" type="text" th:field="*{title}">
+    </div>
+
+    <div>
+        <label for="description">Title</label>
+        <textarea id="description" th:field="*{description}"></textarea>
+    </div>
+
+    <div>
+        <label for="year">Year</label>
+        <input id="year" type="text" th:field="*{year}">
+    </div>
+
+    <div>
+        <label for="author">Author</label>
+        <input id="author" type="text" th:field="*{author}">
+    </div>
+
+    <input type="submit" value="Create">
+</form>
+</main>
+
+</body>
+</html>
