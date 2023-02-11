@@ -8,16 +8,11 @@
     <title>New Person</title>
 </head>
 <body>
-<form method="POST" th:action="@{/people/save}" th:object="${person}">
-    <div>
-        <label for="first-name">First Name</label>
-        <input id="first-name" type="text" th:field="*{firstName}" placeholder="First Name">
-    </div>
-    <div>
-        <label for="last-name">First Name</label>
-        <input id="last-name" type="text" th:field="*{lastName}" placeholder="Last Name">
-    </div>
-    <input type="submit" value="Send">
+<form action="#" method="POST" th:action="@{/save}">
+  <input type="text" th:field="*{person.firstName}" placeholder="First Name">
+  <input type="text" th:field="*{person.lastName}" placeholder="Last Name">
+  <input type="submit" value="Send">
+
 </form>
 </body>
 </html>
