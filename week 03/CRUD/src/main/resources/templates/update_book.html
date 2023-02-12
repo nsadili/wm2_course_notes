@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Update the book</title>
+</head>
+<body>
+
+<h3>Update the book:</h3>
+
+<form action="#" method="POST"
+      th:action="@{/save}" th:object="${book}">
+  <input type="hidden" th:field="*{id}"/> <br/>
+  <input type="text" th:field="*{title}"
+         placeholder="Title"/> <br/>
+  <input type="text" th:field="*{description}"
+         placeholder="Description"/> <br/>
+  <input type="text" th:field="*{year}"
+         placeholder="Year"/> <br/>
+  <input type="text" th:field="*{author}"
+         placeholder="Author"/> <br/>
+  <input type="submit" value="Update the book"/>
+</form>
+
+<a onclick="history.go(-1)">Back to the list</a>
+
+</body>
+</html>
