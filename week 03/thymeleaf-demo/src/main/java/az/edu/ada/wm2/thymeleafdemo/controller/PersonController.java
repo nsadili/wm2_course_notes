@@ -1,7 +1,7 @@
 package az.edu.ada.wm2.thymeleafdemo.controller;
 
 import az.edu.ada.wm2.thymeleafdemo.model.Person;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import az.edu.ada.wm2.thymeleafdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class PersonController {
     private PersonService personService;
 
 
-    @GetMapping({"/", "list"})
+    @GetMapping({"/", "/list"})
     public String getAllPersons(Model model){
         model.addAttribute("persons", personService.list());
 
@@ -36,9 +36,24 @@ public class PersonController {
     @PostMapping("/save")
     public String save(@ModelAttribute Person person){
         personService.save(person);
-        return "redirect:/";
+        return "redirect:/list";
+
+    }
+
+    @GetMapping("/delete/{id}")
+            public String deletePerson(@PathVariable String id) {
+                personService.deleteById(id);
+                return "redirect:/list";
+    }
+
+   @GetMapping("/update/{id}")
+            public ModelAndView updatePerson(@PathVariable String id) {
+                ModelAndView mv = new ModelAndView();
+                mv.setViewName("update");
+                mv.addObject("person", personService.getById(id));
+                return mv;
+        }
 
 
     }
-}
 
