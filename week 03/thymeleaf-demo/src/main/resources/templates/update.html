@@ -9,6 +9,7 @@
 </head>
 <body>
 <form method="POST" th:action="@{/people/save}" th:object="${person}">
+    <input type="hidden" th:field="*{id}"/>
     <div>
         <label for="first-name">First Name</label>
         <input id="first-name" type="text" th:field="*{firstName}" placeholder="First Name">

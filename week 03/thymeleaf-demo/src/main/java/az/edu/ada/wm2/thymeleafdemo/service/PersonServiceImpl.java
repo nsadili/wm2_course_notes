@@ -62,9 +62,6 @@ public class PersonServiceImpl implements PersonService {
                 .filter(person -> person.getId().equals(id))
                 .findAny();
 
-        if (result.isPresent())
-            persons.remove(result.get());
+        result.ifPresent(persons::remove);
     }
-
-
 }
