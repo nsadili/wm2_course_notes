@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -14,21 +17,11 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @GetMapping({"/", "list"})
+    @GetMapping({"/", "/people"})
     public String getAllPersons(Model model) {
         model.addAttribute("persons", personService.list());
-        return "index";
+        return "people";
     }
-
-    @GetMapping("/newPerson")
-    public ModelAndView showNewPersonsPage() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("new-person");
-        mv.addObject("person", new Person());
-        return mv;
-    }
-
-}
 
     @GetMapping("/people/create")
     public ModelAndView createPersonView() {
