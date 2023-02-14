@@ -11,3 +11,36 @@ public class PersonController {
 
 }
 
+@GetMapping({"/", "list"})
+
+public String getAllPersons(Model model){
+
+    model.addAttribute("persons", personService.list());
+
+    return "index";
+
+
+
+}
+@GetMapping("/newPerson")
+public String showNewPersonPage(){
+
+    ModelAndView mv = new ModelAndView();
+    mv.setViewName("new_person");
+    mv.addObject("person", new Person());
+
+    return mv;
+
+}
+@PostMapping("/save")
+
+public String save(@ModelAttribute Person person){
+
+personService.save(person);
+
+return "redirect:/";
+
+}
+
+
+
