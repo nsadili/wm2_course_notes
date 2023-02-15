@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-//@ComponentScan("az.edu.ada.wm2")
 public class SpringBootThymeleafDemoApplication {
 
     public static void main(String[] args) {
