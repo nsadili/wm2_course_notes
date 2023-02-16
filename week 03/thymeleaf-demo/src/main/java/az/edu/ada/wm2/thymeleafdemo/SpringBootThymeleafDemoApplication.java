@@ -5,7 +5,7 @@ import az.edu.ada.wm2.thymeleafdemo.service.PersonService;
 import az.edu.ada.wm2.thymeleafdemo.service.PersonServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+/*import org.springframework.context.annotation.ComponentScan;*/
 
 
 @SpringBootApplication
@@ -16,7 +16,7 @@ public class SpringBootThymeleafDemoApplication {
         SpringApplication.run(SpringBootThymeleafDemoApplication.class, args);
     }
 
-    private void init() {
+    private void init(){
 
         PersonService service = new PersonServiceImpl();
 
