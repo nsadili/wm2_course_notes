@@ -8,7 +8,16 @@ import org.springframework.web.bind.support.DefaultSessionAttributeStore;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 
+@Controller
+@RequestMapping("/orders")
 public class OrderController {
+    @GetMapping("/")
+    public String listOrderDetails(@SessionAttribute Order order){
+        return "orders/order_detail";
+
+
+
+    }
 
 
 }
