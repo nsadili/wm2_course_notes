@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modify Books List</title>
+</head>
+<body>
+<form action="#" th:action="@{/save}" th:object="${book}" method="post">
+    <table>
+        <input type="hidden" th:field="*{id}" th:value="${book.id}"/>
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" th:field="*{title}" th:attr="value = ${book.title}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>
+                <input type="text" th:field="*{author}" th:attr="value = ${book.author}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
