@@ -43,8 +43,8 @@ public class PersonController {
     }
     @GetMapping("/update/{id}")
     public ModelAndView updatePerson(@PathVariable String id) {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("update_person");
+        ModelAndView mv = new ModelAndView("update_person");
+       // mv.setViewName("update_person");
         mv.addObject("person", personService.getById(id));
         return mv;
     }
