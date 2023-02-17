@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update products</title>
+</head>
+<body>
+
+<h2>Updating the product</h2>
+
+<form action="#" method="POST"
+      th:action="@{/save}" th:object="${product}">
+    <input type="hidden" th:field="*{id}"/> <br/>
+    <input type="text" th:field="*{name}"
+           placeholder="name"/> <br/>
+    <input type="text" th:field="*{weight}"
+           placeholder="weight"/> <br/>
+    <input type="text" th:field="*{price}"
+           placeholder="price"/> <br/>
+
+    <input type="submit" value= "Update product"/>
+</form>
+<a onclick="history.go(-1)">Back to the list</a>
+
+
+</body>
+</html>
