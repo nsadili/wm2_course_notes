@@ -1,53 +1,57 @@
 package az.edu.ada.wm2.thymeleafdemo.controller;
 
 import az.edu.ada.wm2.thymeleafdemo.model.Person;
+import org.springframework.web.bind.annotation.PathVariable;
 import az.edu.ada.wm2.thymeleafdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @GetMapping({"/", "list"})
-    public String getAllPersons(Model model){
-        model.addAttribute("personList", personService.list());
-        return "index";
-    }
 
+    @GetMapping({"/", "/list"})
+    public String getAllPersons(Model model){
+        model.addAttribute("persons", personService.list());
+
+
+        return "index";
+
+
+    }
     @GetMapping("/newPerson")
-    public String createNewPerson (Model model){
-        model.addAttribute("person", new Person());
-        return "new_person";
+    public ModelAndView showNewPersonPage(){
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("new_person");
+        mv.addObject("person", new Person());
+        return mv;
     }
     @PostMapping("/save")
-    public String savePerson (@ModelAttribute("person") Person person){
+    public String save(@ModelAttribute Person person){
         personService.save(person);
-        return "redirect:/";
-    }
-
-    @GetMapping("/update/{id}")
-
-    public ModelAndView showUpdatePage(@PathVariable String id){
-        Person found =personService.getById(id);
-        ModelAndView mv = new ModelAndView( "update_person");
-        mv.addObject("person", found);
-
-        return mv;
+        return "redirect:/list";
 
     }
 
     @GetMapping("/delete/{id}")
-    public String deletePerson(@PathVariable String id ,Model model ){
+    public String deletePerson(@PathVariable String id) {
         personService.deleteById(id);
-        return "redirect:/";
+        return "redirect:/list";
+    }
+
+    @GetMapping("/update/{id}")
+    public ModelAndView updatePerson(@PathVariable String id) {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("update");
+        mv.addObject("person", personService.getById(id));
+        return mv;
     }
 
 
