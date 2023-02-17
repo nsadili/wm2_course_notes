@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of products</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<img th:src="@{/images/ADAlogo.png}" alt="Ada logo" width="200px" />
+<h2>List of all the available products</h2>
+<a th:href="@{/newProduct}">Create new product</a>
+<form th:action="@{/submit-name}" method="post">
+    <input type="text" name="userName" placeholder="Enter your name">
+    <button type="submit">Submit</button>
+</form>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>weight</th>
+        <th>price</th>
+
+
+        <th>Actions</th>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}">ID</td>
+        <td th:text="${product.name}">name</td>
+        <td th:text="${product.weight}">weight</td>
+        <td th:text="${product.price}">price</td>
+
+        <td>
+            <a th:href="@{/update/{id}(id=${product.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${product.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+<a href="@{/productss}">List of Products</a><br>
+<a href="@{/orderss}">List of Orders</a>
+</body>
+</html>
