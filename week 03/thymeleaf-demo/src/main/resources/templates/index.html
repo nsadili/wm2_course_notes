@@ -5,9 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>List of people</title>
+    <link rel="stylesheet" th:href="@{/styles/style.css}"/>
 </head>
 <body>
+
+<img th:src="@{/images/ada-logo.png}" alt="ADA logo" width="250px">
 <h3>List of all the people</h3>
+
+<a th:href="@{/newPerson}">Create a new person</a>
 <table border="1px">
     <tr>
         <th>ID</th>
