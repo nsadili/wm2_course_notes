@@ -1,16 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en"
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org">
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List of People</title>
+    <title>List of persons</title>
+    <link rel="stylesheet" th:href="@{/styles/style.css}" />
 </head>
 <body>
-
-
-<h3>List of all People</h3>
-
+<h2>List of all the persons</h2>
+<a th:href="@{/newPerson}">Create new person</a>
 <table border="1px">
     <tr>
         <th>ID</th>
@@ -18,7 +18,7 @@ xmlns:th="http://www.thymeleaf.org">
         <th>Lastname</th>
         <th>Actions</th>
     </tr>
-    <tr th:each="person : ${personList}">
+    <tr th:each="person : ${persons}">
         <td th:text="${person.id}">ID</td>
         <td th:text="${person.firstName}">Firstname</td>
         <td th:text="${person.lastName}">Lastname</td>
