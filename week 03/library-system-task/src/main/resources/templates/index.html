@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of books</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<img th:src="@{/images/ADAlogo.png}" alt="Ada logo" width="200px" />
+<h2>List of all the available books</h2>
+<a th:href="@{/newLibrary}">Create new book</a>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>description</th>
+        <th>year</th>
+        <th>author</th>
+
+        <th>Actions</th>
+    </tr>
+    <tr th:each="library : ${librarys}">
+        <td th:text="${library.id}">ID</td>
+        <td th:text="${library.title}">title</td>
+        <td th:text="${library.description}">description</td>
+        <td th:text="${library.year}">year</td>
+        <td th:text="${library.author}">author</td>
+        <td>
+            <a th:href="@{/update/{id}(id=${library.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${library.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
