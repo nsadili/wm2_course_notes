@@ -23,9 +23,12 @@ public class PersonController {
     }
 
     @GetMapping("/newPerson")
-    public String createNewPerson (Model model){
-model.addAttribute("person", new Person());
-        return "new_person";
+    public ModelAndView showNewPerson(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("new_person");
+        mv.addObject("person", new Person());
+
+        return mv;
 }
     @PostMapping("/save")
     public String savePerson (@ModelAttribute("person") Person person){
@@ -34,7 +37,7 @@ model.addAttribute("person", new Person());
     }
 
     @GetMapping("/update/{id}")
-    
+
     public ModelAndView showUpdatePage(@PathVariable String id){
     Person found =personService.getById(id);
     ModelAndView mv = new ModelAndView( "update_person");

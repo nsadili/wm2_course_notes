@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>List of persons</title>
 </head>
 <body>
-$END$
+<h3>Create New Person</h3>
+
+<form action="#" method="POST"
+      th:action="@{/save}" th:object="${person}">
+
+    <input type ="text" th:field="*{firstName}"
+           placeholder="First name"/> <br/>
+    <input type ="text" th:field="*{lastName}"
+           placeholder="Last name"/> <br/>
+    <input type="submit" value="Save Person"/>
+</form>
+
+<a th:href="@{/list}"> Back to the list</a>
 </body>
 </html>
