@@ -16,19 +16,12 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @GetMapping({"/", "list"})
-    public String getAllPersons(Model model){
-        model.addAttribute("personList", personService.list());
-        return "index";
-    }
+}
 
     @GetMapping("/newPerson")
-    public ModelAndView showNewPerson(){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("new_person");
-        mv.addObject("person", new Person());
-
-        return mv;
+    public String createNewPerson (Model model){
+model.addAttribute("person", new Person());
+        return "new_person";
 }
     @PostMapping("/save")
     public String savePerson (@ModelAttribute("person") Person person){
@@ -37,7 +30,7 @@ public class PersonController {
     }
 
     @GetMapping("/update/{id}")
-
+    
     public ModelAndView showUpdatePage(@PathVariable String id){
     Person found =personService.getById(id);
     ModelAndView mv = new ModelAndView( "update_person");
