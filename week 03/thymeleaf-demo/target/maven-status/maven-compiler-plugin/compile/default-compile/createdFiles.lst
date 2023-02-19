@@ -1,0 +1,5 @@
+az\edu\ada\wm2\thymeleafdemo\model\Person.class
+az\edu\ada\wm2\thymeleafdemo\controller\PersonController.class
+az\edu\ada\wm2\thymeleafdemo\SpringBootThymeleafDemoApplication.class
+az\edu\ada\wm2\thymeleafdemo\service\PersonService.class
+az\edu\ada\wm2\thymeleafdemo\service\PersonServiceImpl.class
