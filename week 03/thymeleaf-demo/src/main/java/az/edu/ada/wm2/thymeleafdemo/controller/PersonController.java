@@ -16,39 +16,5 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @GetMapping({"/", "list"})
-    public String getAllPersons(Model model){
-        model.addAttribute("personList", personService.list());
-        return "index";
-    }
-
-    @GetMapping("/newPerson")
-    public String createNewPerson (Model model){
-model.addAttribute("person", new Person());
-        return "new_person";
 }
-    @PostMapping("/save")
-    public String savePerson (@ModelAttribute("person") Person person){
-        personService.save(person);
-        return "redirect:/";
-    }
 
-    @GetMapping("/update/{id}")
-    
-    public ModelAndView showUpdatePage(@PathVariable String id){
-    Person found =personService.getById(id);
-    ModelAndView mv = new ModelAndView( "update_person");
-    mv.addObject("person", found);
-
-    return mv;
-
-    }
-
-  @GetMapping("/delete/{id}")
-    public String deletePerson(@PathVariable String id ,Model model ){
-        personService.deleteById(id);
-        return "redirect:/";
-  }
-
-
-}
