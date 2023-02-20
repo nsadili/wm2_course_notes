@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <title>Order details</title>
+</head>
+<body>
+
+<p th:if="${book} == null" th:text="The book is empty."></p>
+
+<!--p th:if="${book} != null and ${#lists.isEmpty(book.products)}">The order is empty.</p-->
+
+<ul th:each="book : ${book.books}">
+    <li th:text="${books}">Book Id</li>
+</ul>
+
+<form action="#" method="POST" th:action="@{/books/save}" th:object="${book}">
+    Enter your name:
+    <input type="text" th:field="*{bookName}" placeholder="book name"/> <br/>
+    <input type="submit" value="Save book"/>
+</form>
+
+</body>
+</html>
