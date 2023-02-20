@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/week 04/session-attributes-demo/session-attributes-demo.iml" filepath="$PROJECT_DIR$/week 04/session-attributes-demo/session-attributes-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week 03/thymeleaf-demo/thymeleaf-demo.iml" filepath="$PROJECT_DIR$/week 03/thymeleaf-demo/thymeleaf-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wm2_course_notes.iml" filepath="$PROJECT_DIR$/.idea/wm2_course_notes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week 03/your-first-spring-app/your-first-spring-app.iml" filepath="$PROJECT_DIR$/week 03/your-first-spring-app/your-first-spring-app.iml" />
+    </modules>
+  </component>
+</project>
