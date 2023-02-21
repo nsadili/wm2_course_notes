@@ -9,5 +9,13 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+
+    @GetMapping({"/", "/list"})
+    public String getAllPersons(Model model){
+        model.addAttribute("personList", personService.list());
+
+        return "index";
+    }
+
 }
 

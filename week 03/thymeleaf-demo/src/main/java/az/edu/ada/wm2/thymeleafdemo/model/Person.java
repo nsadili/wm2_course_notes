@@ -1,6 +1,6 @@
 package az.edu.ada.wm2.thymeleafdemo.model;
 
-public class Person {
+public class Person  {
 
     private String id;
     private String firstName;
