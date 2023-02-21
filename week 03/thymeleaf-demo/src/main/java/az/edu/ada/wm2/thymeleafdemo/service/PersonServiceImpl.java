@@ -42,7 +42,10 @@ public class PersonServiceImpl implements PersonService {
             return person;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/nuraddin_sadili_1
         Optional<Person> result = persons.stream()
                 .filter(p -> p.getId().equals(person.getId()))
                 .findAny();

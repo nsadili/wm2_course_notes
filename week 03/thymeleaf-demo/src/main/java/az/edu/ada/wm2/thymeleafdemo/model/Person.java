@@ -1,11 +1,22 @@
 package az.edu.ada.wm2.thymeleafdemo.model;
 
+<<<<<<< HEAD
+=======
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+>>>>>>> origin/nuraddin_sadili_1
 public class Person {
 
     private String id;
     private String firstName;
     private String lastName;
 
+<<<<<<< HEAD
     public Person() {
     }
 
@@ -52,4 +63,7 @@ public class Person {
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+=======
+
+>>>>>>> origin/nuraddin_sadili_1
 }

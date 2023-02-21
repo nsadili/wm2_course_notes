@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>List of persons</title>
+<<<<<<< HEAD
 </head>
 <body>
     <table border="1px">
@@ -19,5 +20,34 @@
           <td th:text="${person.lastName}">Lastname</td>
         </tr>
     </table>
+=======
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<img th:src="@{/images/ada-logo.png}" alt="Ada logo" width="200px" />
+
+<h2>List of all the persons</h2>
+
+<a th:href="@{/newPerson}">Create new person</a>
+
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="person : ${persons}">
+        <td th:text="${person.id}">ID</td>
+        <td th:text="${person.firstName}">Firstname</td>
+        <td th:text="${person.lastName}">Lastname</td>
+        <td>
+            <a th:href="@{/update/{id}(id=${person.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${person.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+>>>>>>> origin/nuraddin_sadili_1
 </body>
 </html>

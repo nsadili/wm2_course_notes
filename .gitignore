@@ -22,8 +22,15 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+<<<<<<< HEAD
 # No XML
 *.xml
 
 #No iml
 *.iml
+=======
+
+# TARGET FOLDER
+target/
+target/**
+>>>>>>> origin/nuraddin_sadili_1

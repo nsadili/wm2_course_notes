@@ -9,7 +9,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
+<<<<<<< HEAD
 //@ComponentScan("az.edu.ada.wm2")
+=======
+>>>>>>> origin/nuraddin_sadili_1
 public class SpringBootThymeleafDemoApplication {
 
     public static void main(String[] args) {
