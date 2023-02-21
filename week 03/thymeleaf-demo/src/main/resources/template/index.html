@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List of Students</title>
+</head>
+<body>
+
+    <h3>List of Persons</h3>
+
+        <table border="1px">
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Actions</th>
+            </tr>
+            <tr th:each="stud : ${studentList}">
+                <td th:text="${stud.id}">ID</td>
+                <td th:text="${stud.firstName}">Firstname</td>
+                <td th:text="${stud.lastName}">Lastname</td>
+                <td>
+                    <a th:href="@{/update/{id}(id=${stud.id})}">Update</a>
+                    <a th:href="@{/delete/{id}(id=${stud.id})}">Delete</a>
+                </td>
+            </tr>
+        </table>
+
+
+</body>
+</html>
