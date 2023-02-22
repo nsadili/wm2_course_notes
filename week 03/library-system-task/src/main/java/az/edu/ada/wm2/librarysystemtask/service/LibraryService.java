@@ -8,9 +8,10 @@ import java.util.List;
 public interface LibraryService {
     List<Library> list();
 
-    Library getById(String id);
+    Library getById(Integer id);
 
     Library save(Library library);
+    void update(Library library);
 
-    void deleteById(String id);
+    void deleteById(Integer id);
 }
