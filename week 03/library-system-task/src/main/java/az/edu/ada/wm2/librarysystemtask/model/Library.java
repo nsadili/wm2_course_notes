@@ -7,12 +7,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Library {
-    private String id;
+    private Integer id;
     private String title;
     private String description;
     private String year;
     private String author;
 
+    public Library(String title, String description, String year, String author) {
+        this.title = title;
+        this.description = description;
+        this.year = year;
+        this.author = author;
 
+    }
 
 }
