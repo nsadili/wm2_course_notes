@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>da</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="stud : ${studentList}">
+        <td th:text="${stud.id}">ID</td>
+        <td th:text="${stud.firstName}">Firstname</td>
+        <td th:text="${stud.lastName}">Lastname</td>
+        <td>
+            <a th:href="@{/update/{id}(id=${stud.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${stud.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
