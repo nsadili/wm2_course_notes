@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Update the Book</title>
+</head>
+<body>
+  <form action="#" method="POST" th:action="@{/library/updateBook}" th:object="${book}">
+    <input type="hidden" th:field="*{id}"/> <br />
+    <input type="text" th:field="*{title}" /> <br/>
+    <input type="text" th:field="*{description}" /> <br/>
+    <input type="text" th:field="*{year}" /> <br/>
+    <input type="text" th:field="*{author}" /> <br/>
+    <input type="submit" value="Add the book"/>
+  </form>
+
+  <a th:href="@{/library/create}">Update the book</a>
+  <a th:href="@{/library/list}">Back to the library</a>
+</body>
+</html>
