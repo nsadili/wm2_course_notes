@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: az.edu.ada.wm2.myfirstspringapp.MyFirstSpringAppApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.869 s - in az.edu.ada.wm2.myfirstspringapp.MyFirstSpringAppApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.872 s - in az.edu.ada.wm2.myfirstspringapp.MyFirstSpringAppApplicationTests
