@@ -1,0 +1,25 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title>List of courses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a th:href="@{/courses/list}">List Course</a>
+            <a th:href="@{/courses/create}">Create Course</a>
+        </nav>
+    </header>
+    <main>
+        <h1 th:text="${course.name}"></h1>
+        <h3 th:text="${course.departmentName}"></h3>
+        <h6 th:text="${course.credits}"></h6>
+    </main>
+</body>
+
+</html>
