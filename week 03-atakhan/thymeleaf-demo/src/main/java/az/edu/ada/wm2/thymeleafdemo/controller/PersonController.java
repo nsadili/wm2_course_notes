@@ -39,16 +39,16 @@ public class PersonController {
 
     @GetMapping("/update/{id}")
     public ModelAndView updatePerson(@PathVariable String id) {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("updated_person");
-        mv.addObject("person", personService.getById(id));
+        Person found = personService.getById(id);
+        ModelAndView mv = new ModelAndView("updated_person");
+        mv.addObject("person", found);
         return mv;
     }
 
     @GetMapping("/delete/{id}")
-    public String deletePerson(@PathVariable String id) {
+    public String deletePerson(@PathVariable String id, Model model) {
         personService.deleteById(id);
-        return "redirect:/";
+        return "redirect:/list";
     }
 }
 
