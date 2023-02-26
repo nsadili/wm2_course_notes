@@ -61,6 +61,8 @@
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 			<version>3.0.4.RELEASE</version>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -69,7 +71,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${project.parent.version}</version>
+				<version>3.0.3</version>
 			</plugin>
 		</plugins>
 	</build>
