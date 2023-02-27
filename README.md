@@ -2,4 +2,4 @@
 
 <strong>DO NOT Update main branch.</strong>
 
-<img src="space.jpeg" alt="solar system" width="500" height="600">
+![alt text](https://cdn.mos.cms.futurecdn.net/9UmWCbyxpKaEGXjwFG7dXo.jpg)
