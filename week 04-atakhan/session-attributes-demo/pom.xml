@@ -8,16 +8,20 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>az.edu.ada.wm2</groupId>
-	<artifactId>thymeleaf-demo</artifactId>
+	<groupId>az.edu.ada.wm2.springmvc</groupId>
+	<artifactId>session-attributes-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootThymeleafDemo</name>
-	<description>Demo project for Spring Boot MVC with Thymeleaf</description>
+	<name>sessionAttributesDemo</name>
+	<description>Demo project for Spring Boot Managing Session Attributes</description>
 	<properties>
 		<java.version>17</java.version>
-		<projectlombok>1.18.26</projectlombok>
+		<projectlombok.version>1.18.26</projectlombok.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -30,29 +34,16 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+			<version>${projectlombok.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${projectlombok.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-
 	</dependencies>
 
 	<build>
