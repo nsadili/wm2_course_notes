@@ -1,6 +1,7 @@
 package az.edu.ada.wm2.workingwithrelationaldatademo1.repo;
 
 import az.edu.ada.wm2.workingwithrelationaldatademo1.model.Person;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
