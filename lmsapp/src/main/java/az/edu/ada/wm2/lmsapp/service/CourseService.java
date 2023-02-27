@@ -2,18 +2,40 @@ package az.edu.ada.wm2.lmsapp.service;
 
 import az.edu.ada.wm2.lmsapp.entity.Course;
 import az.edu.ada.wm2.lmsapp.repository.CourseRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
+@RequiredArgsConstructor
 public class CourseService {
-    @Autowired
-    CourseRepository courseRepository;
+    private final CourseRepository courseRepository;
 
-    public List<Course> listCourses() {
-        return (List<Course>) courseRepository.findAll();
+    public Iterable<Course> listCourses() {
+        return courseRepository.findAll();
+    }
+
+    public Page<Course> listCourses(int page) {
+        return courseRepository.findAll(PageRequest.of(page - 1, 10));
+    }
+
+    public Page<Course> listCourses(int page, int pageSize) {
+        return courseRepository.findAll(PageRequest.of(page - 1, pageSize));
+    }
+
+    public Page<Course> listCourses(int page, int pageSize, String sortBy) {
+        Sort sort;
+
+        if (sortBy == null)
+            return courseRepository.findAll(PageRequest.of(page - 1, pageSize));
+
+        System.out.println(sortBy);
+        sort = sortBy.charAt(0) == '-' ? Sort.by(sortBy.substring(1)).descending() : Sort.by(sortBy);
+        System.out.println(sort);
+
+        return courseRepository.findAll(PageRequest.of(page - 1, pageSize, sort));
     }
 
     public Course getById(Integer id) {
