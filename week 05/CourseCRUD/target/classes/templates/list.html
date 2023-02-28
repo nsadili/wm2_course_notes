@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses</title>
+</head>
+<body>
+    <a th:href="@{'/new'}">Create New Course</a>
+    <table th:border="1px">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Credits</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr th:each="course : ${courses}">
+                <td th:text="${course.getId()}"></td>
+                <td th:text="${course.getName()}"></td>
+                <td th:text="${course.getDepartmentName()}"></td>
+                <td th:text="${course.getCredits()}"></td>
+                <td>
+                    <th:block th:with="id=${course.getId()}">
+                        <a th:href="@{'/update/' + ${id}}">Update</a>
+                        <a th:href="@{'/delete/' + ${id}}">Delete</a>
+                    </th:block>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
