@@ -3,14 +3,18 @@ package az.edu.ada.wm2.thymeleafdemo;
 import az.edu.ada.wm2.thymeleafdemo.model.Person;
 import az.edu.ada.wm2.thymeleafdemo.service.PersonService;
 import az.edu.ada.wm2.thymeleafdemo.service.PersonServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-//@ComponentScan("az.edu.ada.wm2")
 public class SpringBootThymeleafDemoApplication {
+
+    @Autowired
+    PersonService service;
+
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootThymeleafDemoApplication.class, args);
@@ -18,7 +22,7 @@ public class SpringBootThymeleafDemoApplication {
 
     private void init() {
 
-        PersonService service = new PersonServiceImpl();
+
 
         System.out.println(service.list());
 

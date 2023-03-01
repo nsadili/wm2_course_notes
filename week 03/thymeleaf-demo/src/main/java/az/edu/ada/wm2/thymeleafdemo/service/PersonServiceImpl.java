@@ -20,7 +20,6 @@ public class PersonServiceImpl implements PersonService {
         persons.add(new Person(UUID.randomUUID().toString(), "Jamal", "Ismayil"));
     }
 
-    @Override
     public List<Person> list() {
         return persons;
     }
