@@ -1,0 +1,48 @@
+2023-03-01 12:29:23 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSES" not found (this database is empty); SQL statement:
+SELECT * FROM courses [42104-214]
+2023-03-01 12:29:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+SELECT * FROM course [42104-214]
+2023-03-01 12:29:36 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+SELECT * FROM course [42104-214]
+2023-03-01 12:29:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+SELECT * FROM course [42104-214]
+2023-03-01 12:30:08 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:01 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:30 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:30 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:31 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:32 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:34 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:35 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:31:50 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:37:06 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+SELECT * from course [42104-214]
+2023-03-01 12:37:42 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
+2023-03-01 12:42:37 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found (this database is empty); SQL statement:
+select * from course [42104-214]
