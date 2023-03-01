@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/session-attributes-demo/session-attributes-demo.iml" filepath="$PROJECT_DIR$/session-attributes-demo/session-attributes-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/session-attributes-demo_complete/session-attributes-demo (1).iml" filepath="$PROJECT_DIR$/session-attributes-demo_complete/session-attributes-demo (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/week 04.iml" filepath="$PROJECT_DIR$/.idea/week 04.iml" />
+    </modules>
+  </component>
+</project>

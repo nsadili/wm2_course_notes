@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/week 05.iml" filepath="$PROJECT_DIR$/.idea/week 05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/working-with-relational-data-demo1/working-with-relational-data-demo1.iml" filepath="$PROJECT_DIR$/working-with-relational-data-demo1/working-with-relational-data-demo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/working-with-relational-data-demo2/working-with-relational-data-demo2.iml" filepath="$PROJECT_DIR$/working-with-relational-data-demo2/working-with-relational-data-demo2.iml" />
+    </modules>
+  </component>
+</project>

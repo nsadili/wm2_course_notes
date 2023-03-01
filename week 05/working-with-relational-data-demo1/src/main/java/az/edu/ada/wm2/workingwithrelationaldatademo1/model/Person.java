@@ -12,9 +12,12 @@ public class Person {
     private Integer id;
     private String firstName;
     private String lastName;
+//    private float GPA;
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName) // float GPA
+    {
         this.firstName = firstName;
         this.lastName = lastName;
+//        this.GPA = GPA;
     }
 }

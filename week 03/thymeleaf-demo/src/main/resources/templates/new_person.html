@@ -5,23 +5,20 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Update persons</title>
+    <title>List of people</title>
 </head>
 <body>
 
-<h2>Updating the persons</h2>
-
+<h2>Add new people</h2>
 <form action="#" method="POST"
       th:action="@{/save}" th:object="${person}">
-    <input type="hidden" th:field="*{id}"/> <br/>
     <input type="text" th:field="*{firstName}"
            placeholder="First name"/> <br/>
     <input type="text" th:field="*{lastName}"
            placeholder="Last name"/> <br/>
-    <input type="submit" value= "Update Person"/>
+    <input type="submit" value="Save Person"/>
 </form>
-<a onclick="history.go(-1)">Back to the list</a>
-
+<a th:href="@{/list}">Back to the list</a>
 
 </body>
 </html>
