@@ -10,9 +10,22 @@
     <title>Persons</title>
 </head>
 <body>
-
-<p th:text="#{studentList}"></p>
-
-
+<h3>List of all the persons</h3>
+<table border="2px">
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="person : ${studentList}">
+        <td th:text="${person.id}">ID</td>
+        <td th:text="${person.firstName}">Firstname</td>
+        <td th:text="${person.lastName}">Lastname</td>
+        <td>
+            <a th:href="@{/update/{id}(id=${person.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${person.id})}">Delete</a>
+        </td>
+    </tr>
 </body>
 </html>
