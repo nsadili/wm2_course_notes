@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses Info</title>
+</head>
+<body>
+    <h2>Show the person info</h2>
+
+    <p th:if="${course} == null">Course Not Found</p>
+    <!--<p th:if="${#ctx.containsVariable('person')} == false">Person not found</p>-->
+
+    <th:block th:if="${course}">
+        <strong th:text="${course.id}"></strong>
+        <strong th:text="${course.course_name}"></strong>
+        <strong th:text="${course.course_fac}"></strong>
+    </th:block>
+
+    <br/>
+
+    <a th:href="@{/}">List Courses</a>
+
+</body>
+</html>
