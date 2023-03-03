@@ -3,6 +3,7 @@ package az.edu.ada.crud.course.CourseCrud.service.impl;
 import az.edu.ada.crud.course.CourseCrud.model.Course;
 import az.edu.ada.crud.course.CourseCrud.repo.CourseRepository;
 import az.edu.ada.crud.course.CourseCrud.service.CourseService;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class CourseServiceImpl implements CourseService {
-
     @Autowired
     CourseRepository courseRepository;
 
