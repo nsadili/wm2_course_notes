@@ -11,6 +11,7 @@ INSERT INTO STUDENTS(first_name, last_name) VALUES('Fidan', 'Aliyeva')
 INSERT INTO STUDENTS(first_name, last_name) VALUES('Yusif', 'Yusifli')
 INSERT INTO STUDENTS(first_name, last_name) VALUES('Fikrat', 'Pashazada')
 INSERT INTO STUDENTS(first_name, last_name) VALUES('Samir', 'Mammadzada')
+INSERT INTO STUDENTS(first_name, last_name) VALUES('Ilaha', 'Mammadzada')
 
 INSERT INTO COURSES(name, description, credits) VALUES('WM1', 'Web and Mobile 1', 6)
 INSERT INTO COURSES(name, description, credits) VALUES('WM2', 'Web and Mobile 2', 6)

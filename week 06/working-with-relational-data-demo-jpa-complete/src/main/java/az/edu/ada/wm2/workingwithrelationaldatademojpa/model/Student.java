@@ -3,6 +3,7 @@ package az.edu.ada.wm2.workingwithrelationaldatademojpa.model;
 import lombok.*;
 
 import jakarta.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,4 +28,9 @@ public class Student {
             inverseJoinColumns = {@JoinColumn(name = "course_id")}
     )
     private Set<Course> courses = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "Student: " + firstName + ", " + lastName;
+    }
 }
