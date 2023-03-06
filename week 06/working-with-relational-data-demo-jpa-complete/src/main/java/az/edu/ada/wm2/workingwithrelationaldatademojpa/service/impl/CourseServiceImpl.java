@@ -37,8 +37,8 @@ public class CourseServiceImpl implements CourseService {
         courseRepo.deleteById(id);
     }
 
-    public List<Course> getAllWebCourses() {
-        return (List<Course>) courseRepo.getAllWebCoursesUsingJPAQuery("web");
+    public List<Course> getAllWebCourses(String keyword) {
+        return (List<Course>) courseRepo.getAllWebCoursesUsingJPAQuery(keyword);
     }
 
 }
