@@ -65,9 +65,9 @@ public class CourseController {
         return mv;
     }
 
-    @GetMapping("/web")
-    public String getWebCourses(Model model){
-        model.addAttribute("courses", courseService.getAllWebCourses());
+    @GetMapping("/filter/{keyword}")
+    public String getWebCourses(Model model, @PathVariable String keyword){
+        model.addAttribute("courses", courseService.getAllWebCourses(keyword));
 
         return "courses/index";
     }

@@ -15,7 +15,7 @@ public interface CourseService {
 
     void deleteById(Long id);
 
-    List<Course> getAllWebCourses();
+    List<Course> getAllWebCourses(String keyword);
 
 //    List<Course> findByStudentsId(Long id);
 }

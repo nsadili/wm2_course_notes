@@ -1,16 +1,11 @@
 package az.edu.ada.wm2.workingwithrelationaldatademojpa.repository;
 
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Course;
-import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.awt.print.Pageable;
-
 public interface CourseRepository extends JpaRepository<Course, Long> {
-
-//    Page<Course> findAll(Pageable pageable);
 
     Iterable<Course> findByStudentsId(Long id);
 

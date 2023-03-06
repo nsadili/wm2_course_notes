@@ -64,7 +64,9 @@ public class StudentController {
     @GetMapping("/and/{firstName}/{lastName}")
     public String getStudentByNameAnd(Model model, @PathVariable String firstName, @PathVariable String lastName) {
 
-        model.addAttribute("student", studentService.getStudentByNamesAnd(firstName, lastName));
+        var student = studentService.getStudentByNamesAnd(firstName, lastName);
+
+        model.addAttribute("students", student);
 
         return "students/index";
     }
