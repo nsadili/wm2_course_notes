@@ -1,0 +1,69 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Interviewees</title>
+  <style> table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+  }
+  thead th:nth-child(1) {
+    width: 25%;
+  }
+
+  thead th:nth-child(2) {
+    width: 20%;
+  }
+
+  thead th:nth-child(3) {
+    width: 15%;
+  }
+
+  thead th:nth-child(4) {
+    width: 25%;
+  }
+
+  th, td,table {
+    padding: 20px;
+    border: 1px solid lightgrey;
+    text-align:center ;
+  }
+  body {background-color: antiquewhite;}
+  h1   {color: blue;}
+  p    {color: red;}
+  </style>
+</head>
+<body>
+
+<p>Please fill the forum with the information about book:)</p>
+
+<form action="#" th:action="@{/book/save}" th:object="${book}" method="POST">
+
+  <div th:if="${#fields.hasErrors('*')}" class="exceptions" >
+    <p>Please Correct Errors Below</p>
+  </div>
+
+  <table>
+
+    <td>Title:</td>
+    <td><input type="text" th:field="*{name}"><br/></td>
+    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+    <td>Author:</td>
+    <td><input type="text" th:field="*{author}"><br/></td>
+    <td th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></td>
+    <td>Description:</td>
+    <td><input type="text" th:field="*{description}"><br/></td>
+    <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></td>
+
+  </table>
+  <input type="submit" value="Save"/>
+</form>
+
+
+
+</body>
+</html>

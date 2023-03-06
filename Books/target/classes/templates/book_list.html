@@ -1,0 +1,86 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="thymeleaf.org" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Interviewees</title>
+  <style> table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+  }
+  thead th:nth-child(1) {
+    width: 25%;
+  }
+
+  thead th:nth-child(2) {
+    width: 20%;
+  }
+
+  thead th:nth-child(3) {
+    width: 15%;
+  }
+
+  thead th:nth-child(4) {
+    width: 25%;
+  }
+
+  th, td,table {
+    padding: 20px;
+    border: 1px solid lightgrey;
+    text-align:center ;
+  }
+  body {background-color: antiquewhite;}
+  h1   {color: blue;}
+  p    {color: red;}
+  </style>
+</head>
+<body>
+
+<table>
+  <thead>
+  <tr bgcolor="aqua">
+    <th > Name</th>
+    <th>Author</th>
+    <th> Description</th>
+
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="book : ${books}">
+    <td><span th:text="${book.name}"> Title </span></td>
+    <td><span th:text="${book.author}"> Author </span></td>
+    <td><span th:text="${book.description}"> Description </span></td>
+    <!--    <td><a th:href="@{/interviewee/{id}(id=${interviewee.id})}"> <button>View</button> </a></td>-->
+    <!--    <td><a th:href="@{/interviewee/edit/{id}(id=${interviewee.id})}"> <button>Update</button> </a></td>-->
+     <td><a th:href="@{/book/delete/{id}(id=${book.id})}"> <button>Delete</button> </a></td>
+  </tr>
+
+  </tbody>
+
+</table>
+<br>
+
+<br>
+
+<td><a th:href="@{/book/create}"> <button>Create new Books</button> </a></td>
+
+<br>
+
+<br>
+
+<!--<td><a th:href="@{/interviewee/list}"> <button> Back to Interviewee List Page</button></a></td>-->
+
+<br>
+
+<br>
+
+<!--<form th:action="@{/logout}" method="post">-->
+<!--  <input type="submit" value="Log Out"/>-->
+<!--</form>-->
+
+</body>
+</html>
