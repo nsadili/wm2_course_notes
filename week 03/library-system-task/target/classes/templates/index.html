@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List of books</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<img th:src="@{/images/ADAlogo.png}" alt="Ada logo" width="200px" />
+<h2>List of all the available books</h2>
+<a th:href="@{/newLibrary}">Create new book</a>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>description</th>
+        <th>yearr</th>
+        <th>author</th>
+
+        <th>Actions</th>
+    </tr>
+    <p th:if="${librarys} != null" th:text="|Number of persons: ${#lists.size(librarys)}|"></p>
+
+    <tr th:each="library : ${librarys}">
+        <td th:text="${library.id}">ID</td>
+        <td th:text="${library.title}">title</td>
+        <td th:text="${library.description}">description</td>
+        <td th:text="${library.yearr}">yearr</td>
+        <td th:text="${library.author}">author</td>
+        <td>
+            <th:block th:with="id=${library.id}">
+
+                <a th:href="@{'/update/' + ${id}}">Update</a>
+                <a th:href="@{'/delete/' + ${id}}">Delete</a>
+            </th:block>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

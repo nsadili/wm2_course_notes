@@ -1,0 +1,10 @@
+az\edu\ada\wm2\librarysystemtask\repo\impl\LibraryRepositoryImpl.class
+az\edu\ada\wm2\librarysystemtask\service\impl\LibraryServiceImpl.class
+az\edu\ada\wm2\librarysystemtask\init\DataBootstrapperWithRunnerBeans.class
+az\edu\ada\wm2\librarysystemtask\config\DatabaseConfig.class
+az\edu\ada\wm2\librarysystemtask\controller\LibraryController.class
+az\edu\ada\wm2\librarysystemtask\LibrarysystemtaskApplication.class
+az\edu\ada\wm2\librarysystemtask\model\Library.class
+az\edu\ada\wm2\librarysystemtask\repo\LibraryRepository.class
+az\edu\ada\wm2\librarysystemtask\init\DataBootstrapper.class
+az\edu\ada\wm2\librarysystemtask\service\LibraryService.class
