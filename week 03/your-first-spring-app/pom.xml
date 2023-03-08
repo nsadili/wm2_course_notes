@@ -6,8 +6,9 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.0.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> 
 	</parent>
+
 
 	<groupId>az.edu.ada.wm2</groupId>
 	<artifactId>your-first-spring-app</artifactId>
@@ -17,6 +18,7 @@
 	<properties>
 		<java.version>19</java.version>
 	</properties>
+
 
 	<groupId>az.edu.ada.wm2</groupId>
 	<artifactId>your-first-spring-app</artifactId>
@@ -39,6 +41,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<version>3.0.2</version>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+
 			<scope>test</scope>
 		</dependency>
 
@@ -48,6 +55,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>3.0.2</version>
 		</dependency>
+
 
 
 
