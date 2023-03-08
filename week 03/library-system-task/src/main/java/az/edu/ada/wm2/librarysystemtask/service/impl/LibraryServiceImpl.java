@@ -38,7 +38,7 @@ public class LibraryServiceImpl implements LibraryService {
 
         oldRecord.setTitle(library.getTitle());
         oldRecord.setDescription(library.getDescription());
-        oldRecord.setYear(library.getAuthor());
+        oldRecord.setYearr(library.getYearr());
         oldRecord.setAuthor(library.getAuthor());
 
         libraryRepo.update(oldRecord);

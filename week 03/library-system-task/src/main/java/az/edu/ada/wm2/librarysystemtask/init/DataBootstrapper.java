@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 public class DataBootstrapper implements CommandLineRunner {
 
     @Autowired
+
     LibraryRepository libraryRepo;
 
     public void run(String... args) throws Exception {

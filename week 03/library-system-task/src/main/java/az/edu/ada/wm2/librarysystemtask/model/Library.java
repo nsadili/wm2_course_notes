@@ -3,20 +3,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Library {
-    private Integer id;
+    private Integer Id;
     private String title;
     private String description;
-    private String year;
+    private String yearr;
     private String author;
 
-    public Library(String title, String description, String year, String author) {
+    public Library(String title, String description, String yearr, String author) {
         this.title = title;
         this.description = description;
-        this.year = year;
+        this.yearr = yearr;
         this.author = author;
 
     }

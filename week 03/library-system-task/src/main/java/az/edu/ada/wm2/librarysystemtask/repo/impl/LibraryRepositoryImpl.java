@@ -29,7 +29,7 @@ public class LibraryRepositoryImpl implements LibraryRepository {
     public Iterable<Library> list() {
         List<Library> librarys = new ArrayList<>();
         try (Connection conn = ds.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT id, title, description,year,author FROM library;");) {
+             PreparedStatement ps = conn.prepareStatement("SELECT id, title, description,yearr,author FROM library;");) {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -53,7 +53,7 @@ public class LibraryRepositoryImpl implements LibraryRepository {
         try (Connection conn = ds.getConnection();
              PreparedStatement ps =
                      conn.prepareStatement(
-                             "SELECT id, title, description,year,author FROM library WHERE id=?;");) {
+                             "SELECT id, title, description,yearr,author FROM library WHERE id=?;");) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
@@ -77,11 +77,11 @@ public class LibraryRepositoryImpl implements LibraryRepository {
         try (Connection conn = ds.getConnection();
              PreparedStatement ps =
                      conn.prepareStatement(
-                             "INSERT INTO library(title, description, year,author) VALUES(?,?)",
-                             Statement.RETURN_GENERATED_KEYS);) {
+                             "INSERT INTO library(title, description, yearr,author) VALUES(?,?,?,?)",
+                             Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, library.getTitle());
             ps.setString(2, library.getDescription());
-            ps.setString(3, library.getYear());
+            ps.setString(3, library.getYearr());
             ps.setString(4, library.getAuthor());
 
             int rows = ps.executeUpdate();
@@ -108,11 +108,11 @@ public class LibraryRepositoryImpl implements LibraryRepository {
         try (Connection conn = ds.getConnection();
              PreparedStatement ps =
                      conn.prepareStatement(
-                             "UPDATE library SET title = ?, description = ? ,year = ?, author = ? WHERE id = ?");) {
+                             "UPDATE library SET title = ?, description = ? ,yearr = ?, author = ? WHERE id = ?");) {
             ps.setString(1, library.getTitle());
             ps.setString(2, library.getDescription());
             ps.setInt(3, library.getId());
-            ps.setString(4, library.getYear());
+            ps.setString(4, library.getYearr());
             ps.setString(5, library.getAuthor());
 
             int rows = ps.executeUpdate();
