@@ -1,0 +1,5 @@
+az\edu\ada\wm2\courseentitytask\controller\CourseController.class
+az\edu\ada\wm2\courseentitytask\model\Course.class
+az\edu\ada\wm2\courseentitytask\CourseentitytaskApplication.class
+az\edu\ada\wm2\courseentitytask\service\CourseService.class
+az\edu\ada\wm2\courseentitytask\service\CourseServiceImpl.class
