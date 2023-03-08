@@ -32,17 +32,14 @@ public class LibraryController {
         return "person_info";
     }
     @GetMapping("/newLibrary")
-    public ModelAndView showNewLibraryPage(){
-
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("new_library");
-        mv.addObject("library", new Library());
-        return mv;
+    public String CreateNewLibrary(Model model){
+       model.addAttribute("library", new Library());
+        return "new_library";
     }
     @PostMapping("/save")
-    public String save(@ModelAttribute Library library){
+    public String saveLibrary(@ModelAttribute("library") Library library){
         libraryService.save(library);
-        return "redirect:/list";
+        return "redirect:/";
 
     }
     @PostMapping("/update")
@@ -52,13 +49,13 @@ public class LibraryController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteLibrary(@PathVariable String id) {
+    public String deleteLibrary(@PathVariable Integer id) {
         libraryService.deleteById(Integer.valueOf(id));
         return "redirect:/list";
     }
 
     @GetMapping("/update/{id}")
-    public ModelAndView updateLibrary(@PathVariable String id) {
+    public ModelAndView updateLibrary(@PathVariable Integer id) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("update");
         mv.addObject("library", libraryService.getById(Integer.valueOf(id)));
