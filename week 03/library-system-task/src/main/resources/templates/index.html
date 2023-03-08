@@ -20,20 +20,25 @@
         <th>ID</th>
         <th>title</th>
         <th>description</th>
-        <th>year</th>
+        <th>yearr</th>
         <th>author</th>
 
         <th>Actions</th>
     </tr>
+    <p th:if="${librarys} != null" th:text="|Number of persons: ${#lists.size(librarys)}|"></p>
+
     <tr th:each="library : ${librarys}">
         <td th:text="${library.id}">ID</td>
         <td th:text="${library.title}">title</td>
         <td th:text="${library.description}">description</td>
-        <td th:text="${library.year}">year</td>
+        <td th:text="${library.yearr}">yearr</td>
         <td th:text="${library.author}">author</td>
         <td>
-            <a th:href="@{/update/{id}(id=${library.id})}">Update</a>
-            <a th:href="@{/delete/{id}(id=${library.id})}">Delete</a>
+            <th:block th:with="id=${library.id}">
+
+                <a th:href="@{'/update/' + ${id}}">Update</a>
+                <a th:href="@{'/delete/' + ${id}}">Delete</a>
+            </th:block>
         </td>
     </tr>
 </table>
