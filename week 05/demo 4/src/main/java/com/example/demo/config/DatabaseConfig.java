@@ -13,23 +13,23 @@ import javax.sql.DataSource;
 public class DatabaseConfig {
     private static final Logger logger = LoggerFactory.getLogger(DatabaseConfig.class);
 
-//    @ConfigurationProperties(prefix = "spring.datasource")
-//    public DataSource createH2DataSource() {
-//        DataSource ds = DataSourceBuilder.create().build();
-//        logger.info("datasource", ds);
-//        return ds;
-//    }
-
-    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource createH2DataSource() {
-        DataSourceBuilder dsBuilder = DataSourceBuilder.create();
-        dsBuilder.driverClassName("org.h2.Driver");
-        dsBuilder.url("jdbc:h2:file:./data/coursesDB;DB_CLOSE_DELAY=-1");
-        dsBuilder.username("user");
-        dsBuilder.password("1234");
-
-        DataSource ds = dsBuilder.build();
+        DataSource ds = DataSourceBuilder.create().build();
         logger.info("datasource", ds);
         return ds;
     }
+
+//    @Bean
+//    public DataSource createH2DataSource() {
+//        DataSourceBuilder dsBuilder = DataSourceBuilder.create();
+//        dsBuilder.driverClassName("org.h2.Driver");
+//        dsBuilder.url("jdbc:h2:file:./data/coursesDB;DB_CLOSE_DELAY=-1");
+//        dsBuilder.username("user");
+//        dsBuilder.password("1234");
+//
+//        DataSource ds = dsBuilder.build();
+//        logger.info("datasource", ds);
+//        return ds;
+//    }
 }
