@@ -4,7 +4,9 @@ import az.edu.ada.wm2.thymeleafdemo.model.Person;
 
 import java.util.List;
 
+
 public interface PersonService {
+
     List<Person> list();
 
     Person getById(String id);

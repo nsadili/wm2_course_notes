@@ -15,12 +15,12 @@ public class YourFirstSpringAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(YourFirstSpringAppApplication.class, args);
 
-        System.out.println("Printing your HELLO WORLD!");
+        System.out.println("Hello World!");   //This is showed in Terminal
     }
 
     @RequestMapping("/")
     public List<String> getInfo(){
-        return List.of("Nuraddin", "Mahir", "Jamal");
+        return List.of("Nuraddin Sadili", "Javid Magsudov", "Narmina Karimova");
     }
 
 }

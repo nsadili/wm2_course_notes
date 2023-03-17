@@ -11,10 +11,10 @@
 	<groupId>az.edu.ada.wm2</groupId>
 	<artifactId>thymeleaf-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootThymeleafDemo</name>
-	<description>Demo project for Spring Boot MVC with Thymeleaf</description>
+	<name>thymeleafdemo</name>
+	<description>thymeleafdemo</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,9 +37,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<version>3.0.0</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -47,6 +45,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.0.2</version>
 			</plugin>
 		</plugins>
 	</build>
