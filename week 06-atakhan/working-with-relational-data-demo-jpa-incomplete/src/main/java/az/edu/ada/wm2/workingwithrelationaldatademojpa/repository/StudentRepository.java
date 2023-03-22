@@ -6,4 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
+
+    Iterable<Student> findByFirstNameAndLastName(String firstName, String lastName);
 }
