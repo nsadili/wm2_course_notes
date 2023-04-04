@@ -1,6 +1,6 @@
 package az.edu.ada.wm2.workingwithrelationaldatademojpa.controller;
 
-import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Course;
+import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Address;
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.service.CourseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,34 +13,34 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/course")
-public class CourseController {
-    static final Logger LOGGER = LoggerFactory.getLogger(CourseController.class);
+public class AddressController {
+    static final Logger LOGGER = LoggerFactory.getLogger(AddressController.class);
 
     CourseService courseService;
 
-    public CourseController(CourseService courseService) {
+    public AddressController(CourseService courseService) {
         this.courseService = courseService;
     }
 
     @GetMapping({"", "/", "/list"})
     public String getCourses(Model model) {
-        List<Course> courses = courseService.list();
-        model.addAttribute("courses", courses);
+        List<Address> cours = courseService.list();
+        model.addAttribute("courses", cours);
 
-        LOGGER.info(courses.toString());
+        LOGGER.info(cours.toString());
 
         return "courses/index";
     }
 
     @GetMapping("/new")
     public String createNewCourse(Model model) {
-        model.addAttribute("course", new Course());
+        model.addAttribute("course", new Address());
         return "courses/new";
     }
 
     @PostMapping("/")
-    public String save(@ModelAttribute("course") Course course) {
-        courseService.save(course);
+    public String save(@ModelAttribute("course") Address address) {
+        courseService.save(address);
         return "redirect:/course/";
     }
 
@@ -63,5 +63,12 @@ public class CourseController {
 
         mv.addObject("course", courseService.getById(id));
         return mv;
+    }
+
+    @GetMapping("/filter/{keyword}")
+    public String getWebCourses(Model model, @PathVariable String keyword){
+        model.addAttribute("courses", courseService.getAllWebCourses(keyword));
+
+        return "courses/index";
     }
 }
