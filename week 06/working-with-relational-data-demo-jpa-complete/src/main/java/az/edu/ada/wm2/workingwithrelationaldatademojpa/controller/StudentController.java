@@ -2,7 +2,7 @@ package az.edu.ada.wm2.workingwithrelationaldatademojpa.controller;
 
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Course;
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Student;
-import az.edu.ada.wm2.workingwithrelationaldatademojpa.service.CourseService;
+//import az.edu.ada.wm2.workingwithrelationaldatademojpa.service.CourseService;
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.service.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
