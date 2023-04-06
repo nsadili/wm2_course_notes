@@ -1,0 +1,7 @@
+az\edu\az\wm2\mongo_db_demo\repo\StudentRepository.class
+az\edu\az\wm2\mongo_db_demo\MongoDbDemoApplication.class
+az\edu\az\wm2\mongo_db_demo\entity\Course.class
+az\edu\az\wm2\mongo_db_demo\controller\StudentController.class
+az\edu\az\wm2\mongo_db_demo\entity\Student.class
+az\edu\az\wm2\mongo_db_demo\init\MongoDataBootstrapper.class
+az\edu\az\wm2\mongo_db_demo\repo\CourseRepository.class

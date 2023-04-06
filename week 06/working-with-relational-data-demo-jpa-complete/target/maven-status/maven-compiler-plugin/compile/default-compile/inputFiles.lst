@@ -1,0 +1,12 @@
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\service\impl\CourseServiceImpl.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\model\Course.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\repository\StudentRepository.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\config\WebMVCConfig.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\service\StudentService.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\WorkingWithRelationalDataDemoJpaApplication.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\controller\CourseController.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\repository\CourseRepository.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\service\CourseService.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\service\impl\StudentServiceImpl.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\model\Student.java
+E:\OneDrive - ADA University\Homework\Spring2023\wm2_course_notes\week 06\working-with-relational-data-demo-jpa-complete\src\main\java\az\edu\ada\wm2\workingwithrelationaldatademojpa\controller\StudentController.java

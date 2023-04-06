@@ -1,0 +1,12 @@
+az\edu\ada\wm2\workingwithrelationaldatademojpa\config\WebMVCConfig.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\service\impl\StudentServiceImpl.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\controller\StudentController.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\service\CourseService.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\model\Student.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\WorkingWithRelationalDataDemoJpaApplication.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\service\impl\CourseServiceImpl.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\service\StudentService.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\model\Course.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\controller\CourseController.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\repository\CourseRepository.class
+az\edu\ada\wm2\workingwithrelationaldatademojpa\repository\StudentRepository.class
