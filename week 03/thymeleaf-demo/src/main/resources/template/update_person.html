@@ -1,0 +1,12 @@
+<form action="#" method="POST"
+
+      th:action="@{/save}" th:object="${person}">
+
+    <input type="hidden" th:field="*{id}"/> <br/>
+    <input type="text" th:field="*{firstName}"
+           placeholder="First name"/> <br/>
+    <input type="text" th:field="*{lastName}"
+           placeholder="Last name"/> <br/>
+    <input type="submit" value=“Update Person"/>
+</form>
+<a onclick="history.go(-1)">Back to the list</a>
