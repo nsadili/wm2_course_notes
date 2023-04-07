@@ -13,6 +13,6 @@ public class BeansConfiguration {
 
     @Bean
     public String byeText(){
-        return "Farewell, my dear friend.. :(";
+        return "Farewell, my dear friend.. :( v";
     }
 }
