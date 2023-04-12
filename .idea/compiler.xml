@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Crud-App" />
         <module name="thymeleaf-demo" />
         <module name="session-attributes-demo (1)" />
         <module name="swingapp" />
@@ -18,6 +19,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Crud-App" options="-parameters" />
       <module name="session-attributes-demo" options="-parameters" />
       <module name="session-attributes-demo (1)" options="-parameters" />
       <module name="thymeleaf-demo" options="-parameters" />
