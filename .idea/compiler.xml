@@ -14,6 +14,7 @@
         <module name="maven_java_app" />
         <module name="your-first-spring-app" />
         <module name="session-attributes-demo" />
+        <module name="spring-boot-security-framework-demo" />
       </profile>
     </annotationProcessing>
   </component>
@@ -22,6 +23,7 @@
       <module name="Crud-App" options="-parameters" />
       <module name="session-attributes-demo" options="-parameters" />
       <module name="session-attributes-demo (1)" options="-parameters" />
+      <module name="spring-boot-security-framework-demo" options="-parameters" />
       <module name="thymeleaf-demo" options="-parameters" />
       <module name="your-first-spring-app" options="-parameters" />
     </option>
