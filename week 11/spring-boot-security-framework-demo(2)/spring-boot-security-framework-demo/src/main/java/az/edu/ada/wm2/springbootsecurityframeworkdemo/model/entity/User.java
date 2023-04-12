@@ -1,4 +1,4 @@
-package az.edu.ada.wm2.springbootsecurityframeworkdemo.entity;
+package az.edu.ada.wm2.springbootsecurityframeworkdemo.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+
 
 @Entity
 @Data
@@ -34,7 +35,7 @@ public class User implements UserDetails {
     private String roles; //ROLE_USER,ROLE_ADMIN -> persisted in DB
 
     @Transient
-    private List<String> authorities = Arrays.asList("ROLE_USER");
+    private List<String> authorities = new ArrayList<>(Arrays.asList("ROLE_USER"));
 
     public List<GrantedAuthority> getAuthorities() {
         return this.authorities.stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
@@ -81,4 +82,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

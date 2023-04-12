@@ -1,8 +1,7 @@
 package az.edu.ada.wm2.springbootsecurityframeworkdemo.config;
 
-import az.edu.ada.wm2.springbootsecurityframeworkdemo.entity.User;
+import az.edu.ada.wm2.springbootsecurityframeworkdemo.model.entity.User;
 import az.edu.ada.wm2.springbootsecurityframeworkdemo.repo.UserRepository;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -56,14 +55,25 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests()
+        http
+                .csrf().disable()
+                /*disabling csrf attack, being able to access h2 console,
+                 protection that spring security framework puts in our app by default
+                 */
+                .headers().frameOptions().sameOrigin()
+                .and()
+
+                .authorizeHttpRequests()
                 .requestMatchers("/users/**").hasAnyRole("ADMIN", "USER")
                 .requestMatchers("/admins/**").hasRole("ADMIN")
-                .requestMatchers("/").permitAll()
-                .requestMatchers(PathRequest.toH2Console()).permitAll() //TBD
+                .requestMatchers("/","/signup/**").permitAll()
+//                .requestMatchers(PathRequest.toH2Console()).permitAll() //TBD
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
+                .formLogin(form -> form
+                                .loginPage("/login")
+                                .permitAll()
+                )
         ;
 
         return http.build();
