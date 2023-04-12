@@ -4,14 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
@@ -23,15 +22,40 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
     private String username;
     private String password;
+    private String email;
 
-    private List<GrantedAuthority> grantedAuthorities = Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+    private String roles; // ROLE_USER, ROLE_ADMIN
+
+    @Transient
+    private List<String> grantedAuthorities = Arrays.asList("ROLE_USER");
+
+    public User(String username, String password, String email){
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
+    public User addRole(String authority){
+        this.grantedAuthorities.add(authority);
+        return this;
+    }
+
+    @PrePersist
+    @PreUpdate
+    public void saveRoles(){
+        this.roles = String.join(";",this.grantedAuthorities);
+    }
+
+    @PostLoad
+    private void readRoles(){
+       this.grantedAuthorities = Arrays.stream(this.roles.split(";")).collect(Collectors.toList());
+    }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return grantedAuthorities;
+    public List<GrantedAuthority> getAuthorities() {
+        return this.grantedAuthorities.stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
     }
 
     @Override
