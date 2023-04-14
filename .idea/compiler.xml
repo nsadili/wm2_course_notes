@@ -12,6 +12,7 @@
         <module name="swingapp" />
         <module name="Java_WebApp" />
         <module name="maven_java_app" />
+        <module name="resful-demo" />
         <module name="your-first-spring-app" />
         <module name="session-attributes-demo" />
         <module name="spring-boot-security-framework-demo" />
@@ -21,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Crud-App" options="-parameters" />
+      <module name="resful-demo" options="-parameters" />
       <module name="session-attributes-demo" options="-parameters" />
       <module name="session-attributes-demo (1)" options="-parameters" />
       <module name="spring-boot-security-framework-demo" options="-parameters" />
