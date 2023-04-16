@@ -19,7 +19,7 @@ public class BaseController {
 
     @GetMapping("/")
     public String getWelcomePage(Model model){
-        model.addAttribute("message", "This is global HOME page");
+        model.addAttribute("message", welcomeMessage);
         return "welcome";
     }
 

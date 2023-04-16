@@ -1,4 +1,4 @@
-package az.edu.ada.wm2.springbootsecurityframeworkdemo.model;
+package az.edu.ada.wm2.springbootsecurityframeworkdemo.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Data
@@ -24,12 +25,35 @@ public class User implements UserDetails {
 
     private String username;
     private String password;
+    private String email;
+
+    private String roles; // ROLE_USER, ROLE_ADMIN
+
     @Transient
-    private List<GrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+    private List<String> authorities = new ArrayList<>(Arrays.asList("ROLE_USER"));
 
     public List<GrantedAuthority> getAuthorities() {
-        return authorities;
+        return authorities.stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
     }
+
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
+
+    public User addRole(String authority) {
+        this.authorities.add(authority);
+        return this;
+    }
+
+    @PrePersist
+    @PreUpdate
+    private void saveRoles() {this.roles = String.join(";", this.authorities);}
+
+    @PostLoad
+    private void readRoles() {this.authorities = Arrays.stream(this.roles.split(";")).collect(Collectors.toList());}
 
     @Override
     public boolean isAccountNonExpired() {
