@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event info</title>
+</head>
+<body>
+
+<h2>Show the event info</h2>
+
+<p th:if="${event} == null">Event not found</p>
+
+<th:block th:if="${event}">
+    <strong th:text="${event.id}"></strong>
+    <strong th:text="${event.name}"></strong>
+    <strong th:text="${event.description}"></strong>
+</th:block>
+
+<br/>
+
+<a th:href="@{/event/}">List events</a>
+
+</body>
+</html>

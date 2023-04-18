@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+</head>
+<body>
+
+<h2>Events list</h2>
+<a th:href="@{/event/new}">Add New Event</a>
+
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+
+    <p th:if="${events} != null" th:text="|Number of available events: ${#lists.size(events)}|"></p>
+
+    <tr th:if="${#lists.isEmpty(events)}">
+        <td colspan="4">The event list is empty</td>
+    </tr>
+    <tr th:each="event : ${events}">
+        <td th:text="${event.id}">ID</td>
+        <td th:text="${event.name}">Name</td>
+        <td th:text="${event.description}">Description</td>
+        <td>
+            <th:block th:with="id=${event.id}">
+                <a th:href="@{'/event/update/' + ${id}}">Update</a>
+                <a th:href="@{'/event/delete/' + ${id}}">Delete</a>
+            </th:block>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/}"> Back to HOME </a>
+</body>
+</html>

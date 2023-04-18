@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendees</title>
+</head>
+<body>
+
+<h2>Attendee: <span th:text="${attendee.firstName} + ' ' + ${attendee.lastName}"></span></h2>
+<h3>Events</h3>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+
+    </tr>
+    <tr th:each="event : ${attendee.events}">
+        <td th:text="${event.id}">ID</td>
+        <td th:text="${event.name}">Name</td>
+        <td th:text="${event.description}">Description</td>
+    </tr>
+</table>
+
+<h3>Available events</h3>
+<select>
+    <option th:each="event : ${events}"
+            th:text="${event.id} + ': ' + ${event.name} + ': ' + ${event.description}"
+            th:value="${event.id}"></option>
+</select>
+
+<br /><a th:href="@{/attendee/list}"> Back to list </a>
+</body>
+</html>

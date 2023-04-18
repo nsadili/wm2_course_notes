@@ -44,11 +44,15 @@
             <th:block th:with="id=${student.id}">
                 <a th:href="@{'/student/update/' + ${id}}">Update</a>
                 <a th:href="@{'/student/delete/' + ${id}}">Delete</a>
-                <a th:href="@{'/student/' + ${id} + '/addCourse/'}">Add course</a>
+                <a th:href="@{'/student/' + ${id} + '/addCourse'}">Add course</a>
             </th:block>
         </td>
     </tr>
 </table>
-<a th:href="@{/}"> Back to HOME </a>
+
+<h3> Page [[${currentPage}]] / [[${totalPages}]]</h3>
+<h4> Displaying [[${nbElements}]] / [[${totalElements}]]</h4>
+
+<br/><a th:href="@{/}"> Back to HOME </a>
 </body>
 </html>

@@ -1,0 +1,117 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+
+h2 {
+  font-size: 36px;
+  text-align: center;
+  color: #333;
+  margin: 40px 0;
+}
+
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table td select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+table td select:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+
+a {
+  text-decoration: none;
+  color: #4a90e2;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #0072c6;
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0072c6;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pagination a {
+  display: inline-block;
+  color: #333;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  transition: all 0.3s ease-in-out;
+}
+
+.pagination a:hover {
+  background-color: #0072c6;
+  color: #fff;
+}
+
+.pagination .active a {
+  background-color: #0072c6;
+  color: #fff;
+}
+
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}

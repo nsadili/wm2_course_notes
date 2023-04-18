@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attendees</title>
+</head>
+<body>
+
+<h2>Attendees list</h2>
+<a th:href="@{/attendee/new}">Add New Attendee</a>
+
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Events</th>
+        <th>Actions</th>
+    </tr>
+
+    <p th:if="${attendees} != null" th:text="|Number of attendees: ${#lists.size(attendees)}|"></p>
+
+    <tr th:if="${#lists.isEmpty(attendees)}">
+        <td colspan="4">The attendee list is empty</td>
+    </tr>
+    <tr th:each="attendee : ${attendees}">
+        <td th:text="${attendee.id}">ID</td>
+        <td th:text="${attendee.firstName}">FirstName</td>
+        <td th:text="${attendee.lastName}">LastName</td>
+        <td>
+            <select>
+                <option th:each="event : ${attendee.events}"
+                        th:text="${event.name}"
+                        th:value="${event.id}">
+                </option>
+            </select>
+        </td>
+        <td>
+            <th:block th:with="id=${attendee.id}">
+                <a th:href="@{'/attendee/update/' + ${id}}">Update</a>
+                <a th:href="@{'/attendee/delete/' + ${id}}">Delete</a>
+                <a th:href="@{'/attendee/' + ${id} + '/addEvent'}">Add event</a>
+            </th:block>
+        </td>
+    </tr>
+</table>
+
+<div>
+    <ul class="pagination">
+        <li th:if="${currentPage > 1}">
+            <a th:href="@{${'/?page=' + (currentPage - 1)}}">Previous</a>
+        </li>
+        <li th:each="i : ${#numbers.sequence(1, totalPages)}" th:class="${i == currentPage} ? 'active'">
+            <a th:href="@{${'/?page=' + i}}">[[${i}]]</a>
+        </li>
+        <li th:if="${currentPage < totalPages}">
+            <a th:href="@{${'/?page=' + (currentPage + 1)}}">Next</a>
+        </li>
+    </ul>
+</div>
+
+<h3> Page [[${currentPage}]] / [[${totalPages}]]</h3>
+<h4> Displaying [[${nbElements}]] / [[${totalElements}]]</h4>
+
+<br/><a th:href="@{/}"> Back to HOME </a>
+</body>
+</html>

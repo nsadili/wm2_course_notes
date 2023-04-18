@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendees</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th> Firstname</th>
+        <th> Lastname</th>
+        <th> Events</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${attendee.firstName}"> First Name</td>
+        <td th:text="${attendee.lastName}"> Last Name</td>
+        <td>
+            <select>
+                <option th:each="event : ${attendee.events}"
+                        th:text="${event.name}"
+                        th:value="${event.id}"></option>
+            </select>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/attendee/list}"> Back to list </a>
+</body>
+</html>

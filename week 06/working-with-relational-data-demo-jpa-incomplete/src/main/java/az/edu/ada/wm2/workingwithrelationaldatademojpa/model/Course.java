@@ -13,7 +13,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "COURSES")
-public class Address {
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,13 +28,13 @@ public class Address {
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students = new HashSet<>();
 
-    public Address(String name, String description, Integer credits) {
+    public Course(String name, String description, Integer credits) {
         this.name = name;
         this.description = description;
         this.credits = credits;
     }
 
-    public Address(String name, Integer credits) {
+    public Course(String name, Integer credits) {
         this(name, name, credits);
     }
 
