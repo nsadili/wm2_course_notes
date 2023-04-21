@@ -1,10 +1,10 @@
-package az.edu.ada.wm2.resfuldemo;
+package com.example.rest_consumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ResfulDemoApplicationTests {
+class RestConsumerApplicationTests {
 
 	@Test
 	void contextLoads() {
