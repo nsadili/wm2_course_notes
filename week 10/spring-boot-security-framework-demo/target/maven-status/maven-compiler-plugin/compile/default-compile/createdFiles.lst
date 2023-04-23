@@ -1,0 +1,4 @@
+az\edu\ada\wm2\springbootsecurityframeworkdemo\SpringBootSecurityFrameworkDemoApplication.class
+az\edu\ada\wm2\springbootsecurityframeworkdemo\controller\WelcomeController.class
+az\edu\ada\wm2\springbootsecurityframeworkdemo\config\BeansConfig.class
+az\edu\ada\wm2\springbootsecurityframeworkdemo\config\MvcConfig.class
