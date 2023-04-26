@@ -22,7 +22,10 @@ public class BaseController {
         model.addAttribute("message", welcomeMessage);
         return "welcome";
     }
-
+    @GetMapping("/home")
+    public String getIndexPage(Model model){
+        return "index";
+    }
     @GetMapping("/bye")
     public String getFarewellPage(Model model){
         model.addAttribute("message", farewellMessage);
