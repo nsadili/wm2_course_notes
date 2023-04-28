@@ -1,4 +1,4 @@
-package az.edu.ada.wm2.Usersecurity.entity;
+package az.edu.ada.wm2.springbootsecurityframeworkdemo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,17 +13,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="users")
-
+@Table(name = "users")
 public class User implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
 
     private String username;
@@ -32,35 +30,35 @@ public class User implements UserDetails {
 
     private String email;
 
-    private String roles; //ROLE_USER. ROLE_ADMIN
 
-    private List<String> authorities = Arrays.asList("ROLE_USER");
+    private String roles; //ROLE_USER,ROLE_ADMIN -> persisted in DB
+
     @Transient
-    private List<GrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+    private List<String> authorities = Arrays.asList("ROLE_USER");
 
     public List<GrantedAuthority> getAuthorities() {
-        //return authorities;
-        return this.authorities.stream().map(role-> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
+        return this.authorities.stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
     }
 
-    public User(String username, String password, String email){
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public User addRole(GrantedAuthority authority){
+    public User addRole(String authority) {
         this.authorities.add(authority);
         return this;
     }
 
     @PrePersist
     @PreUpdate
-    public void saveRoles(){
-        this.roles=String.join(";", this.authorities);
+    private void saveRoles() {
+        this.roles = String.join(";", this.authorities);
     }
 
-    private void readRoles(){
+    @PostLoad
+    private void readRoles() {
         this.authorities = Arrays.stream(this.roles.split(";")).collect(Collectors.toList());
     }
 
