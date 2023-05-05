@@ -1,7 +1,13 @@
 package az.edu.ada.wm2.springbootsecurityframeworkdemo.config;
 
+<<<<<<< HEAD
 import az.edu.ada.wm2.springbootsecurityframeworkdemo.model.entity.User;
 import az.edu.ada.wm2.springbootsecurityframeworkdemo.repo.UserRepository;
+=======
+import az.edu.ada.wm2.springbootsecurityframeworkdemo.entity.User;
+import az.edu.ada.wm2.springbootsecurityframeworkdemo.repo.UserRepository;
+import org.springframework.beans.factory.annotation.Value;
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -55,6 +61,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+<<<<<<< HEAD
         http
                 .csrf().disable()
                 .headers().frameOptions().sameOrigin()
@@ -70,6 +77,16 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .permitAll())
+=======
+        http.authorizeHttpRequests()
+                .requestMatchers("/users/**").hasAnyRole("ADMIN", "USER")
+                .requestMatchers("/admins/**").hasRole("ADMIN")
+                .requestMatchers("/").permitAll()
+                .requestMatchers(PathRequest.toH2Console()).permitAll() //TBD
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
         ;
 
         return http.build();

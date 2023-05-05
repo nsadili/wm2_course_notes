@@ -2,10 +2,14 @@ package az.edu.ada.wm2.thymeleafdemo.controller;
 
 import az.edu.ada.wm2.thymeleafdemo.model.Person;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PathVariable;
 =======
 
 >>>>>>> 4b3cd23 (working on application thymeleaf-demo)
+=======
+import org.springframework.web.bind.annotation.PathVariable;
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 import az.edu.ada.wm2.thymeleafdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +25,14 @@ public class PersonController {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @GetMapping({"/", "/list"})
 =======
     @GetMapping({"/", "list"})
 >>>>>>> 4b3cd23 (working on application thymeleaf-demo)
+=======
+    @GetMapping({"/", "/list"})
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
     public String getAllPersons(Model model){
         model.addAttribute("persons", personService.list());
 
@@ -45,6 +53,9 @@ public class PersonController {
     public String save(@ModelAttribute Person person){
         personService.save(person);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
         return "redirect:/list";
 
     }
@@ -65,6 +76,7 @@ public class PersonController {
 
 
     }
+<<<<<<< HEAD
 =======
         return "redirect:/";
 
@@ -72,4 +84,6 @@ public class PersonController {
     }
 }
 >>>>>>> 4b3cd23 (working on application thymeleaf-demo)
+=======
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 

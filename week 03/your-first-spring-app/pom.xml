@@ -28,7 +28,10 @@
 	<properties>
 		<java.version>19</java.version>
 	</properties>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,6 +46,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<version>3.0.2</version>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -52,6 +59,12 @@
 		</dependency>
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

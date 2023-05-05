@@ -26,6 +26,10 @@ public class YourFirstSpringAppApplication {
 
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 @SpringBootApplication
 public class YourFirstSpringAppApplication {
 
@@ -41,6 +45,7 @@ public class YourFirstSpringAppApplication {
 public class YourFirstSpringAppApplication {
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 
 
 public class YourFirstSpringAppApplication {
@@ -62,6 +67,11 @@ public class YourFirstSpringAppApplication {
 		System.out.println("Printing your HELLO WORLD!");
 	}
 
+=======
+		SpringApplication.run(YourFirstSpringAppApplication.class, args);
+
+		System.out.println("Printing your HELLO WORLD!");
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
 	}
 
 
@@ -69,3 +79,11 @@ public class YourFirstSpringAppApplication {
 }
 
 
+<<<<<<< HEAD
+=======
+}
+
+}
+
+
+>>>>>>> e34632cbb6be8e37891d993fc95f4a181e066e39
