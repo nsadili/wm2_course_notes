@@ -41,6 +41,12 @@ public class YourFirstSpringAppApplication {
 public class YourFirstSpringAppApplication {
 
 	public static void main(String[] args) {
+
+
+public class YourFirstSpringAppApplication {
+
+	public static void main(String[] args) {
+
 		SpringApplication.run(YourFirstSpringAppApplication.class, args);
 
 		System.out.println("Printing your HELLO WORLD!");
@@ -55,6 +61,10 @@ public class YourFirstSpringAppApplication {
 
 		System.out.println("Printing your HELLO WORLD!");
 	}
+
+	}
+
+
 
 }
 
