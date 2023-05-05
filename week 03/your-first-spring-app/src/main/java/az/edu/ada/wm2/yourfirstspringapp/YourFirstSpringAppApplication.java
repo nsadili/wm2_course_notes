@@ -44,7 +44,20 @@ public class YourFirstSpringAppApplication {
 		SpringApplication.run(YourFirstSpringAppApplication.class, args);
 
 		System.out.println("Printing your HELLO WORLD!");
+
+
+@SpringBootApplication
+
+public class YourFirstSpringAppApplication {
+
+	public static void main(String[] args) {
+
+		SpringApplication.run(YourFirstSpringAppApplication.class, args);
+
+		System.out.println("Printing your HELLO WORLD!");
+
 	}
 
 
 }
+
