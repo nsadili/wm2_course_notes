@@ -2,8 +2,11 @@ package az.edu.ada.wm2.resfuldemo.service.impl;
 
 import az.edu.ada.wm2.resfuldemo.model.dto.ProductDto;
 import az.edu.ada.wm2.resfuldemo.model.entity.Product;
+import az.edu.ada.wm2.resfuldemo.model.mapper.ProductMapper;
 import az.edu.ada.wm2.resfuldemo.repo.ProductRepository;
 import az.edu.ada.wm2.resfuldemo.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
@@ -12,10 +15,11 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     private ProductRepository prodRepo;
 
@@ -50,32 +54,33 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> list() {
-        List<Product> products = prodRepo.findAll(Sort.by(Sort.Direction.DESC, "modifiedAt"));
-        products.stream().map(product -> new ProductDto(
-                product.getId(), product.getName(),
-                product.getDescription(), product.getPricePerItem()
-        )).collect(Collectors.toList());
+        var prods = prodRepo.findAll(Sort.by(Sort.Direction.DESC, "modifiedAt"));
+
+//        return prods.stream().map(prod -> new ProductDto(
+//                prod.getId(), prod.getName(),
+//                prod.getDescription(), prod.getPricePerItem()
+//        )).collect(Collectors.toList());
+
+        return ProductMapper.INSTANCE.productListToProductDtoList(prods);
     }
 
     @Override
     public Optional<Product> partialUpdate(Long id, Map<String, Object> map) {
-        Optional<Product> res = prodRepo.findById(id);
-        if(res.isEmpty()) return res;
+        Optional<Product> oldProd = prodRepo.findById(id);
 
-        Product old = res.get();
+        if (oldProd.isEmpty()) return oldProd;
 
+        Product pr = oldProd.get();
         map.forEach((fieldName, value) -> {
             try {
                 Field field = ReflectionUtils.findField(Product.class, fieldName);
                 field.setAccessible(true);
-                field.set(old, value);
+                field.set(pr, value);
+            } catch (Exception e) {
+                LOG.error(e.getMessage());
             }
-
-            catch (IllegalAccessException | NullPointerException e){
-
-            }
-
         });
-        return Optional.empty();
+
+        return Optional.of(prodRepo.save(pr));
     }
 }

@@ -1,5 +1,6 @@
 package az.edu.ada.wm2.resfuldemo.service;
 
+import az.edu.ada.wm2.resfuldemo.model.dto.ProductDto;
 import az.edu.ada.wm2.resfuldemo.model.entity.Product;
 
 import java.util.List;
@@ -18,5 +19,5 @@ public interface ProductService {
 
     Optional<Product> partialUpdate(Long id, Map<String, Object> p);
 
-    List<Product> list();
+    List<ProductDto> list();
 }
