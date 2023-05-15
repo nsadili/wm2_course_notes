@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DBInitializer {
-
-
     @Bean
     @Autowired
     public CommandLineRunner init(ProductRepository productRepo) {

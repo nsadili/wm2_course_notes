@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,13 +10,16 @@
         <module name="Crud-App" />
         <module name="thymeleaf-demo" />
         <module name="session-attributes-demo (1)" />
-        <module name="swingapp" />
         <module name="Java_WebApp" />
         <module name="maven_java_app" />
         <module name="resful-demo" />
         <module name="your-first-spring-app" />
         <module name="session-attributes-demo" />
+        <module name="resful-demo (1)" />
         <module name="spring-boot-security-framework-demo" />
+        <module name="validation-and-exception-handling-demo" />
+        <module name="restful-consumer-demo" />
+        <module name="swingapp" />
       </profile>
     </annotationProcessing>
   </component>
@@ -23,10 +27,13 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Crud-App" options="-parameters" />
       <module name="resful-demo" options="-parameters" />
+      <module name="resful-demo (1)" options="-parameters" />
+      <module name="restful-consumer-demo" options="-parameters" />
       <module name="session-attributes-demo" options="-parameters" />
       <module name="session-attributes-demo (1)" options="-parameters" />
       <module name="spring-boot-security-framework-demo" options="-parameters" />
       <module name="thymeleaf-demo" options="-parameters" />
+      <module name="validation-and-exception-handling-demo" options="-parameters" />
       <module name="your-first-spring-app" options="-parameters" />
     </option>
   </component>
