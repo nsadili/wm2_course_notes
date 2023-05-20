@@ -24,6 +24,17 @@ public class StudentServiceImpl implements StudentService {
         this.courseRepo = courseRepo;
     }
 
+
+
+
+
+
+
+
+
+
+
+
     @Override
     public Page<Student> list(int pageNo) {
         Pageable pageable = PageRequest.of(pageNo - 1, 5);
@@ -35,12 +46,18 @@ public class StudentServiceImpl implements StudentService {
         return studentRepo.save(student);
     }
 
+
+
+
+
     @Override
     public Student getById(Long id) {
         return studentRepo.findById(id).orElse(null);
     }
 
-    public List<Student> getStudentByNamesAnd(String firstName, String lastName) {
+
+
+    public void getStudentByNamesAnd(String firstName, String lastName) {
         return (List<Student>) studentRepo.findByFirstNameAndLastName(firstName, lastName);
 
     }
@@ -48,6 +65,8 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getStudentByNamesOr(String firstName, String lastName) {
         return (List<Student>) studentRepo.findByFirstNameOrLastName(firstName, lastName);
     }
+
+
 
     @Override
     public List<Course> getCoursesByStudentId(Long id) {

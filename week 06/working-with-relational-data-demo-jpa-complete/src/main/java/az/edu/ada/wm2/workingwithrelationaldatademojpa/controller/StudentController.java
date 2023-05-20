@@ -2,7 +2,6 @@ package az.edu.ada.wm2.workingwithrelationaldatademojpa.controller;
 
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Course;
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.model.Student;
-import az.edu.ada.wm2.workingwithrelationaldatademojpa.service.CourseService;
 import az.edu.ada.wm2.workingwithrelationaldatademojpa.service.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,10 +23,14 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+
+
     @GetMapping({"", "/", "/list"})
     public String getStudents(Model model) {
         return getStudentsByPageNo(model, 1);
     }
+
+
 
     @GetMapping("/page/{no}")
     public String getStudentsByPageNo(Model model, @PathVariable("no") Integer pageNo) {
@@ -42,6 +45,9 @@ public class StudentController {
         return "students/index";
     }
 
+
+
+
     @GetMapping("/new")
     public String createNewStudent(Model model) {
         model.addAttribute("student", new Student());
@@ -49,17 +55,24 @@ public class StudentController {
         return "students/new";
     }
 
+
+
     @PostMapping("/")
     public String save(@ModelAttribute("student") Student student) {
         studentService.save(student);
         return "redirect:/student/";
     }
 
+
     @GetMapping("/{id}")
     public String getStudent(Model model, @PathVariable Long id) throws Exception {
         model.addAttribute("student", studentService.getById(id));
         return "students/info";
     }
+
+
+
+
 
     @GetMapping("/and/{firstName}/{lastName}")
     public String getStudentByNameAnd(Model model, @PathVariable String firstName, @PathVariable String lastName) {
@@ -71,12 +84,17 @@ public class StudentController {
         return "students/index";
     }
 
+
+
+
     @GetMapping("/or/{firstName}/{lastName}")
     public String getStudentByNameOr(Model model, @PathVariable String firstName, @PathVariable String lastName) {
         model.addAttribute("students", studentService.getStudentByNamesOr(firstName, lastName));
 
         return "students/index";
     }
+
+
 
     @GetMapping("/{id}/courses")
     public String getCoursesByStudentId(Model model, @PathVariable Long id) {

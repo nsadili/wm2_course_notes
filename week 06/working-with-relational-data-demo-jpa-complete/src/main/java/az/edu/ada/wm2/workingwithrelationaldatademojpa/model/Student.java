@@ -23,7 +23,8 @@ public class Student {
     private String lastName;
 
     @ManyToMany
-    @JoinTable(name = "student_course",
+    @JoinTable
+            (name = "student_course",
             joinColumns = {@JoinColumn(name = "student_id")},
             inverseJoinColumns = {@JoinColumn(name = "course_id")}
     )

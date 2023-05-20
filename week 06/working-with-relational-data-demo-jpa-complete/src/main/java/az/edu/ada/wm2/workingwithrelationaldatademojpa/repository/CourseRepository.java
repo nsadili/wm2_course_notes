@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-    Iterable<Course> findByStudentsId(Long id);
+    Iterable<Course> findByCourseId(Long id);
 
     @Query("select c from Course c where c not in " +
             "(select c from Course c left join c.students std where std.id = :id)")

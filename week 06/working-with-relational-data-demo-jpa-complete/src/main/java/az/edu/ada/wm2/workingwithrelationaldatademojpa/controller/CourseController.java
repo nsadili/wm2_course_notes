@@ -50,11 +50,8 @@ public class CourseController {
         return "courses/info";
     }
 
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id) {
-        courseService.deleteById(id);
-        return "redirect:/course/";
-    }
+
+
 
     @GetMapping("/update/{id}")
     public ModelAndView updateCourse(@PathVariable Long id) {
@@ -63,6 +60,11 @@ public class CourseController {
 
         mv.addObject("course", courseService.getById(id));
         return mv;
+    }
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        courseService.deleteById(id);
+        return "redirect:/course/";
     }
 
     @GetMapping("/filter/{keyword}")

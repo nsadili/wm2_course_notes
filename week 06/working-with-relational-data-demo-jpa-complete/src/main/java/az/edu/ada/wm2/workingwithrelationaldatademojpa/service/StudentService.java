@@ -15,11 +15,14 @@ public interface StudentService {
 
     Student getById(Long id);
 
-    List<Student> getStudentByNamesAnd(String firstName, String lastName);
+
 
     List<Student> getStudentByNamesOr(String firstName, String lastName);
 
     List<Course> getCoursesByStudentId(Long id);
 
     List<Course> getCoursesByStudentIdNot(Long id);
+
+    void getStudentByNamesAnd(String firstName, String lastName);
+
 }
